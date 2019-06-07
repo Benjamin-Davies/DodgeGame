@@ -17,8 +17,14 @@ namespace DodgeGame
 
             score = 0;
             livesLeft = 0;
+
             planets = new List<Planet>();
-            spaceship = new Spaceship(new Point(10, 10));
+            for (int i = 0; i < 8; i++)
+            {
+                planets.Add(new Planet(new Point(100 * i, 0)));
+            }
+
+            spaceship = new Spaceship(new Point(0, 100));
         }
     }
 }
