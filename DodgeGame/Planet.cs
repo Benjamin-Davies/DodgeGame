@@ -3,6 +3,9 @@ using System.Drawing;
 
 namespace DodgeGame
 {
+    /// <summary>
+    /// A planet object
+    /// </summary>
     class Planet
     {
         public Point Position;

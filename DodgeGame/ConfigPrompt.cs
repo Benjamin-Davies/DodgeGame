@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace DodgeGame
 {
+    /// <summary>
+    /// The config prompt that asks the user for
+    /// their name and number of lives
+    /// </summary>
     public partial class ConfigPrompt : Form
     {
         public ConfigPrompt()
