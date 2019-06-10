@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,6 +7,7 @@ namespace DodgeGame
 {
     public partial class MainWindow : Form
     {
+        private string username;
         private int score;
         private int livesLeft;
         private List<Planet> planets;
@@ -27,4 +29,4 @@ namespace DodgeGame
             spaceship = new Spaceship(new Point(0, 100));
         }
     }
-}
+} 
