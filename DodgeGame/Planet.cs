@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using DodgeGame.Properties;
+using System.Drawing;
 
 namespace DodgeGame
 {
@@ -9,6 +10,11 @@ namespace DodgeGame
         public Planet(Point position)
         {
             Position = position;
+        }
+
+        public void Draw(Graphics g)
+        {
+            g.DrawImage(Resources.planet1, Position);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace DodgeGame
         private int livesLeft;
         private List<Planet> planets;
         private Spaceship spaceship;
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -39,5 +39,19 @@ namespace DodgeGame
             username = configPrompt.Username.Text;
             livesLeft = (int)configPrompt.LifeCount.Value;
         }
+
+        private void MainWindow_Paint(object sender, PaintEventArgs e)
+        {
+            var g = e.Graphics;
+
+            g.FillRectangle(Brushes.CornflowerBlue, e.ClipRectangle);
+
+            foreach (var planet in planets)
+            {
+                planet.Draw(g);
+            }
+
+            spaceship.Draw(g);
+        }
     }
-} 
+}

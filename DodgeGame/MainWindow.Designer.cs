@@ -38,6 +38,7 @@
             this.Name = "MainWindow";
             this.Text = "Dodge Game";
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainWindow_Paint);
             this.ResumeLayout(false);
 
         }
