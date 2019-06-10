@@ -17,6 +17,7 @@ namespace DodgeGame
         {
             InitializeComponent();
 
+            username = "";
             score = 0;
             livesLeft = 0;
 
@@ -27,6 +28,16 @@ namespace DodgeGame
             }
 
             spaceship = new Spaceship(new Point(0, 100));
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            var configPrompt = new ConfigPrompt();
+
+            while (configPrompt.ShowDialog(this) != DialogResult.OK) ;
+
+            username = configPrompt.Username.Text;
+            livesLeft = (int)configPrompt.LifeCount.Value;
         }
     }
 } 
