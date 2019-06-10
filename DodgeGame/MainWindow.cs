@@ -38,6 +38,8 @@ namespace DodgeGame
 
             username = configPrompt.Username.Text;
             livesLeft = (int)configPrompt.LifeCount.Value;
+
+            FrameTimer.Enabled = true;
         }
 
         private void MainWindow_Paint(object sender, PaintEventArgs e)
@@ -52,6 +54,17 @@ namespace DodgeGame
             }
 
             spaceship.Draw(g);
+        }
+
+        private void FrameTimer_Tick(object sender, EventArgs e)
+        {
+            foreach (var planet in planets)
+            {
+                // TODO: Move into a method on Planet
+                planet.Position.Y += 10;
+            }
+
+            Invalidate();
         }
     }
 }
