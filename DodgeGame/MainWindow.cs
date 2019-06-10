@@ -77,8 +77,7 @@ namespace DodgeGame
             // Loop through the planets and update them
             foreach (var planet in planets)
             {
-                // TODO: Move into a method on Planet
-                planet.Position.Y += 10;
+                planet.Update();
             }
 
             // Tell the window to redraw

@@ -15,6 +15,11 @@ namespace DodgeGame
             Position = position;
         }
 
+        public void Update()
+        {
+            Position.Y += 10;
+        }
+
         public void Draw(Graphics g)
         {
             g.DrawImage(Resources.planet1, Position);
