@@ -104,6 +104,7 @@
             this.Controls.Add(this.Username);
             this.Controls.Add(this.label1);
             this.Name = "ConfigPrompt";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Config";
             ((System.ComponentModel.ISupportInitialize)(this.LifeCount)).EndInit();
             this.ResumeLayout(false);

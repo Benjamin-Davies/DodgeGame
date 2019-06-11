@@ -60,7 +60,7 @@ namespace DodgeGame
             var g = e.Graphics;
 
             // Clear the screen
-            g.FillRectangle(Brushes.CornflowerBlue, e.ClipRectangle);
+            g.FillRectangle(Brushes.DarkSlateBlue, e.ClipRectangle);
 
             // Loop through all of the planets and draw them
             foreach (var planet in planets)
@@ -70,6 +70,10 @@ namespace DodgeGame
 
             // Draw the spaceship
             spaceship.Draw(g);
+
+            // Draw the text
+            g.DrawString($"Score: {score}", Font, Brushes.White, 5, 5);
+            g.DrawString($"Lives: {livesLeft}", Font, Brushes.White, 5, 15 + Font.Size);
         }
 
         private void FrameTimer_Tick(object sender, EventArgs e)
