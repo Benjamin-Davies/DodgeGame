@@ -40,4 +40,4 @@ namespace DodgeGame
             livesLeft = (int)configPrompt.LifeCount.Value;
         }
     }
-} 
+}
