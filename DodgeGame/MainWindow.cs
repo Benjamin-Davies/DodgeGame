@@ -87,5 +87,11 @@ namespace DodgeGame
             // Tell the window to redraw
             Invalidate();
         }
+
+        private void MainWindow_MouseMove(object sender, MouseEventArgs e)
+        {
+            // Move the spaceship to in line with the mouse
+            spaceship.Position.X = e.X - spaceship.Size.Width / 2;
+        }
     }
 }

@@ -9,10 +9,13 @@ namespace DodgeGame
     class Planet
     {
         public Point Position;
+        public Size Size;
+        public Rectangle Rectangle => new Rectangle(Position, Size);
 
         public Planet(Point position)
         {
             Position = position;
+            Size = Resources.planet1.Size;
         }
 
         public void Update()
