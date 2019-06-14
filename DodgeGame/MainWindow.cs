@@ -35,7 +35,7 @@ namespace DodgeGame
             }
 
             // Create a spaceship
-            spaceship = new Spaceship(new Point(0, 100));
+            spaceship = new Spaceship();
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -83,6 +83,9 @@ namespace DodgeGame
             {
                 planet.Update();
             }
+
+            // Update our spaceship
+            spaceship.Update();
 
             // Tell the window to redraw
             Invalidate();

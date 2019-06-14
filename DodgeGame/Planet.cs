@@ -8,7 +8,10 @@ namespace DodgeGame
     /// </summary>
     class Planet : Sprite
     {
-        public Planet(Point position) : base(position, Resources.planet1) { }
+        public Planet(Point position) : base(Resources.planet1)
+        {
+            Position = position;
+        }
 
         public override void Update()
         {

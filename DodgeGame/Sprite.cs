@@ -9,22 +9,21 @@ namespace DodgeGame
     abstract class Sprite
     {
         public Point Position;
-        public Size Size;
+        public Size Size => Image.Size;
         public Rectangle Rectangle => new Rectangle(Position, Size);
         public Image Image;
 
-        protected Sprite(Point position, Image image)
+        protected Sprite(Image image)
         {
             Image = image;
-            Position = position;
-            Size = Image.Size;
+            Position = new Point();
         }
 
         public virtual void Update() { }
 
         public virtual void Draw(Graphics g)
         {
-            g.DrawImage(Image, Position);
+            g.DrawImage(Image, Rectangle);
         }
     }
 }
