@@ -13,7 +13,7 @@ namespace DodgeGame
         public override void Draw(Graphics g)
         {
             // Update the y coordinate so that it is at the bottom of the window
-            Position.Y = (int)g.ClipBounds.Height - Size.Height;
+            Position.Y = g.ClipBounds.Height - Size.Height;
 
             // Draw normally
             base.Draw(g);

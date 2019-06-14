@@ -31,7 +31,7 @@ namespace DodgeGame
             planets = new List<Planet>();
             for (int i = 0; i < 8; i++)
             {
-                planets.Add(new Planet(new Point(100 * i, 0)));
+                planets.Add(new Planet(new PointF(100 * i, 0)));
             }
 
             // Create a spaceship
