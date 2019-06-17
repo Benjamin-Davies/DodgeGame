@@ -35,11 +35,12 @@
             // 
             // FrameTimer
             // 
+            this.FrameTimer.Interval = 33;
             this.FrameTimer.Tick += new System.EventHandler(this.FrameTimer_Tick);
             // 
             // PlanetTimer
             // 
-            this.PlanetTimer.Interval = 500;
+            this.PlanetTimer.Interval = 200;
             this.PlanetTimer.Tick += new System.EventHandler(this.PlanetTimer_Tick);
             // 
             // MainWindow
