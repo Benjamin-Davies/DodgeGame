@@ -30,11 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.FrameTimer = new System.Windows.Forms.Timer(this.components);
+            this.PlanetTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // FrameTimer
             // 
             this.FrameTimer.Tick += new System.EventHandler(this.FrameTimer_Tick);
+            // 
+            // PlanetTimer
+            // 
+            this.PlanetTimer.Interval = 500;
+            this.PlanetTimer.Tick += new System.EventHandler(this.PlanetTimer_Tick);
             // 
             // MainWindow
             // 
@@ -58,6 +64,7 @@
         #endregion
 
         private System.Windows.Forms.Timer FrameTimer;
+        private System.Windows.Forms.Timer PlanetTimer;
     }
 }
 

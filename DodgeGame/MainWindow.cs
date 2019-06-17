@@ -10,12 +10,16 @@ namespace DodgeGame
     /// </summary>
     public partial class MainWindow : Form
     {
+        // Constant values
+        private const int planetWidth = 77;
+
         // Member variables for storing the state of the game
         private string username;
         private int score;
         private int livesLeft;
         private List<Planet> planets;
         private Spaceship spaceship;
+        private Random random;
 
         public MainWindow()
         {
@@ -27,15 +31,14 @@ namespace DodgeGame
             score = 0;
             livesLeft = 0;
 
-            // Create some dummy planets
+            // Create a list of planets
             planets = new List<Planet>();
-            for (int i = 0; i < 8; i++)
-            {
-                planets.Add(new Planet(new PointF(100 * i, 0)));
-            }
 
             // Create a spaceship
             spaceship = new Spaceship();
+
+            // Initialize a random number generator
+            random = new Random();
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -52,6 +55,7 @@ namespace DodgeGame
 
             // Only start moving stuff once we show the window
             FrameTimer.Enabled = true;
+            PlanetTimer.Enabled = true;
         }
 
         private void MainWindow_Paint(object sender, PaintEventArgs e)
@@ -78,6 +82,14 @@ namespace DodgeGame
 
         private void FrameTimer_Tick(object sender, EventArgs e)
         {
+            // Remove the planets that have fallen off of the screen
+            // We use a reverse for loop so that, when we remove planets, we dont skip any
+            for (int i = planets.Count - 1; i >= 0; i--)
+            {
+                if (planets[i].Position.Y > Height)
+                    planets.RemoveAt(i);
+            }
+
             // Loop through the planets and update them
             foreach (var planet in planets)
             {
@@ -95,6 +107,16 @@ namespace DodgeGame
         {
             // Move the spaceship to in line with the mouse
             spaceship.Position.X = e.X - spaceship.Size.Width / 2;
+        }
+
+        private void PlanetTimer_Tick(object sender, EventArgs e)
+        {
+            // Choose a random position for the new planet
+            var xPosition = random.Next(0, Width - planetWidth);
+
+            // Create a new planet and add it to the planets list
+            var planet = new Planet(new PointF(xPosition, 0));
+            planets.Add(planet);
         }
     }
 }
