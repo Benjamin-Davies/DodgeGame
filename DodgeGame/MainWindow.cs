@@ -20,6 +20,7 @@ namespace DodgeGame
         private List<Planet> planets;
         private Spaceship spaceship;
         private Random random;
+        private bool mouseOverWindow = true;
 
         public MainWindow()
         {
@@ -64,7 +65,27 @@ namespace DodgeGame
             var g = e.Graphics;
 
             // Clear the screen
-            g.FillRectangle(Brushes.DarkSlateBlue, e.ClipRectangle);
+            if (mouseOverWindow)
+            {
+                g.FillRectangle(Brushes.DarkSlateBlue, e.ClipRectangle);
+            }
+            else
+            {
+                g.FillRectangle(Brushes.SlateBlue, e.ClipRectangle);
+
+                var font = new Font(Font.FontFamily, 72);
+                var format = new StringFormat
+                {
+                    Alignment = StringAlignment.Center,
+                    LineAlignment = StringAlignment.Center
+                };
+                g.DrawString(
+                    "Move The Mouse\nTo Over\nThe Window",
+                    font,
+                    Brushes.DarkSeaGreen,
+                    new PointF(e.ClipRectangle.Width / 2f, e.ClipRectangle.Height / 2f),
+                    format);
+            }
 
             // Loop through all of the planets and draw them
             foreach (var planet in planets)
@@ -117,6 +138,16 @@ namespace DodgeGame
             // Create a new planet and add it to the planets list
             var planet = new Planet(new PointF(xPosition, -planetWidth));
             planets.Add(planet);
+        }
+
+        private void MainWindow_MouseEnter(object sender, EventArgs e)
+        {
+            mouseOverWindow = true;
+        }
+
+        private void MainWindow_MouseLeave(object sender, EventArgs e)
+        {
+            mouseOverWindow = false;
         }
     }
 }
