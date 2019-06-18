@@ -120,8 +120,27 @@ namespace DodgeGame
             // Update our spaceship
             spaceship.Update();
 
+            // Check for collisions
+            if (CheckCollisions())
+            {
+                // Remove all of the planets
+                planets.Clear();
+            }
+
             // Tell the window to redraw
             Invalidate();
+        }
+
+        private bool CheckCollisions()
+        {
+            // Loop through all of the planets
+            foreach (var planet in planets)
+            {
+                // And check if the intersect with our spaceship
+                if (planet.Rectangle.IntersectsWith(spaceship.Rectangle))
+                    return true;
+            }
+            return false;
         }
 
         private void MainWindow_MouseMove(object sender, MouseEventArgs e)
