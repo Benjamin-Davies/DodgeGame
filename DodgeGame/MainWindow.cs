@@ -115,7 +115,7 @@ namespace DodgeGame
             var xPosition = random.Next(0, Width - planetWidth);
 
             // Create a new planet and add it to the planets list
-            var planet = new Planet(new PointF(xPosition, 0));
+            var planet = new Planet(new PointF(xPosition, -planetWidth));
             planets.Add(planet);
         }
     }
