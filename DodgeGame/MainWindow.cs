@@ -71,7 +71,7 @@ namespace DodgeGame
             }
             else
             {
-                g.FillRectangle(Brushes.SlateBlue, e.ClipRectangle);
+                g.FillRectangle(Brushes.DarkSlateBlue, e.ClipRectangle);
 
                 var font = new Font(Font.FontFamily, 72);
                 var format = new StringFormat
@@ -82,7 +82,7 @@ namespace DodgeGame
                 g.DrawString(
                     "Move The Mouse\nTo Over\nThe Window",
                     font,
-                    Brushes.DarkSeaGreen,
+                    Brushes.SlateGray,
                     new PointF(e.ClipRectangle.Width / 2f, e.ClipRectangle.Height / 2f),
                     format);
             }
