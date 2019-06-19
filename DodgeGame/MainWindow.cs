@@ -123,8 +123,32 @@ namespace DodgeGame
             // Check for collisions
             if (CheckCollisions())
             {
-                // Remove all of the planets
+                // Remove all of the planets and decrement lifeCount
                 planets.Clear();
+                livesLeft--;
+
+                // Disable updates while we prompt the user
+                FrameTimer.Enabled = false;
+                PlanetTimer.Enabled = false;
+
+                // Check if we are out of lives
+                if (livesLeft <= 0)
+                {
+                    // Tell the user he/she is out of lives
+                    MessageBox.Show(this, "You have run out of lives", "Out of lives");
+
+                    // Reset the game by running the init method
+                    MainWindow_Load(this, new EventArgs());
+                }
+                else
+                {
+                    // Tell the user he/she died
+                    MessageBox.Show(this, "You have been hit by a planet", "You died");
+                }
+
+                // Enable the timers again
+                FrameTimer.Enabled = true;
+                PlanetTimer.Enabled = true;
             }
 
             // Tell the window to redraw
