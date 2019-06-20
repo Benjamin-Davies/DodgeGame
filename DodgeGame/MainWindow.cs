@@ -82,7 +82,7 @@ namespace DodgeGame
                 g.DrawString(
                     "Move The Mouse\nTo Over\nThe Window",
                     font,
-                    Brushes.SlateGray,
+                    Brushes.SkyBlue,
                     new PointF(e.ClipRectangle.Width / 2f, e.ClipRectangle.Height / 2f),
                     format);
             }
