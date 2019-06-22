@@ -114,11 +114,11 @@ namespace DodgeGame
             // Loop through the planets and update them
             foreach (var planet in planets)
             {
-                planet.Update();
+                planet.Update(ClientSize);
             }
 
             // Update our spaceship
-            spaceship.Update();
+            spaceship.Update(ClientSize);
 
             // Check for collisions
             if (CheckCollisions())
