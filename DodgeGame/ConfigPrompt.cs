@@ -17,6 +17,8 @@ namespace DodgeGame
     /// </summary>
     public partial class ConfigPrompt : Form
     {
+        private bool closing = false;
+
         public ConfigPrompt()
         {
             InitializeComponent();
@@ -34,7 +36,7 @@ namespace DodgeGame
             bool matches = rx.IsMatch(Username.Text);
 
             // Stop the form from closing if it doesn't match
-            if (!matches)
+            if (!matches && !closing)
             {
                 MessageBox.Show(this,
                     "It must start with a letter, and then only consist of letters, numbers, underscores and spaces.\n" +
@@ -42,6 +44,13 @@ namespace DodgeGame
                     "Invalid Username");
                 e.Cancel = true;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Close the app
+            closing = true;
+            Application.Exit();
         }
     }
 }
