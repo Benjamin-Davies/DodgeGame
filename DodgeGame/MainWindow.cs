@@ -135,7 +135,7 @@ namespace DodgeGame
                 if (livesLeft <= 0)
                 {
                     // Tell the user he/she is out of lives
-                    MessageBox.Show(this, "You have run out of lives", "Out of lives");
+                    MessageBox.Show(this, $"{username} finished with {score} points.", "Game Over");
 
                     // Reset the game by running the init method
                     MainWindow_Load(this, new EventArgs());
