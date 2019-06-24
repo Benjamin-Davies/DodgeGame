@@ -13,7 +13,7 @@ namespace DodgeGame
             Position = position;
         }
 
-        public override void Update()
+        public override void Update(SizeF windowSize)
         {
             Position.Y += 10;
         }

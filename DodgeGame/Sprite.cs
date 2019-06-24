@@ -19,7 +19,7 @@ namespace DodgeGame
             Position = new PointF();
         }
 
-        public virtual void Update() { }
+        public virtual void Update(SizeF windowSize) { }
 
         public virtual void Draw(Graphics g)
         {
