@@ -103,6 +103,9 @@ namespace DodgeGame
 
         private void FrameTimer_Tick(object sender, EventArgs e)
         {
+            // Increment the score
+            score++;
+
             // Remove the planets that have fallen off of the screen
             // We use a reverse for loop so that, when we remove planets, we dont skip any
             for (int i = planets.Count - 1; i >= 0; i--)
