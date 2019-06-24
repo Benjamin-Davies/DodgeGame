@@ -161,7 +161,7 @@ namespace DodgeGame
             foreach (var planet in planets)
             {
                 // And check if the intersect with our spaceship
-                if (planet.Rectangle.IntersectsWith(spaceship.Rectangle))
+                if (planet.CollidesWith(spaceship.Rectangle))
                     return true;
             }
             return false;
