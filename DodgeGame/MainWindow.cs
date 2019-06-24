@@ -47,8 +47,8 @@ namespace DodgeGame
             // Create a config prompt
             var configPrompt = new ConfigPrompt();
 
-            // Show the config prompt until the user presses Ok
-            while (configPrompt.ShowDialog(this) != DialogResult.OK) ;
+            // Show the config prompt
+            configPrompt.ShowDialog(this);
 
             // Store the inputs from the config prompt
             username = configPrompt.Username.Text;

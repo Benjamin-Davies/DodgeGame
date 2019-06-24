@@ -106,6 +106,7 @@
             this.Name = "ConfigPrompt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Config";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConfigPrompt_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.LifeCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
