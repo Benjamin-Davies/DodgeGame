@@ -66,6 +66,9 @@ namespace DodgeGame
             username = configPrompt.Username.Text;
             livesLeft = (int)configPrompt.LifeCount.Value;
 
+            // Reset the score
+            score = 0;
+
             // Only start moving stuff once we show the window
             FrameTimer.Enabled = true;
             PlanetTimer.Enabled = true;
