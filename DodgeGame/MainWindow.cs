@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DodgeGame.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -21,6 +22,7 @@ namespace DodgeGame
         private Spaceship spaceship;
         private Random random;
         private bool mouseOverWindow = true;
+        private bool instructionsShown = false;
 
         public MainWindow()
         {
@@ -44,6 +46,16 @@ namespace DodgeGame
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            // Only show the instructions once
+            if (!instructionsShown)
+            {
+                // Show the instructions
+                MessageBox.Show(this, Resources.Instructions, "Instructions");
+
+                // Dont show them again
+                instructionsShown = true;
+            }
+
             // Create a config prompt
             var configPrompt = new ConfigPrompt();
 
