@@ -81,7 +81,8 @@ namespace DodgeGame.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to One you close this box, you will be asked for a username and for how many lives you want. Your usename must be at least 3 characters, and not have any symbols in it. You can have up to five lives.
+        ///The objective is to survive as long as you can without hitting a planet. You can move using the mouse. Every time you get hit you lose a life..
         /// </summary>
         internal static string Instructions {
             get {
@@ -115,6 +116,16 @@ namespace DodgeGame.Properties {
         internal static System.Drawing.Bitmap planet1 {
             get {
                 object obj = ResourceManager.GetObject("planet1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap smallstar {
+            get {
+                object obj = ResourceManager.GetObject("smallstar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
