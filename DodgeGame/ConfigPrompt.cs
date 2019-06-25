@@ -46,7 +46,7 @@ namespace DodgeGame
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             // Close the app
             closing = true;
