@@ -125,7 +125,7 @@ namespace DodgeGame
             // We use a reverse for loop so that, when we remove planets, we dont skip any
             for (int i = planets.Count - 1; i >= 0; i--)
             {
-                if (planets[i].Position.Y > Height)
+                if (planets[i].Position.Y > ClientSize.Height)
                     planets.RemoveAt(i);
             }
 
