@@ -41,8 +41,8 @@ namespace DodgeGame
                     ? rectangle.Width / 2
                     : rectangle.Height / 2;
                 var center = new PointF(
-                    rectangle.X - rectangle.Width / 2,
-                    rectangle.Y - rectangle.Height / 2
+                    rectangle.X + rectangle.Width / 2,
+                    rectangle.Y + rectangle.Height / 2
                 );
 
                 return new Circle
