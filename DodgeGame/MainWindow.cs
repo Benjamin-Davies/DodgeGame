@@ -132,6 +132,7 @@ namespace DodgeGame
             // Loop through the planets and update them
             foreach (var planet in planets)
             {
+                planet.Speed = 10 + score / 500f;
                 planet.Update(ClientSize);
             }
 

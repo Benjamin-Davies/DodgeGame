@@ -9,6 +9,8 @@ namespace DodgeGame
     /// </summary>
     class Planet : Sprite
     {
+        public float Speed = 10;
+
         public Planet(PointF position) : base(Resources.planet1)
         {
             Position = position;
@@ -16,7 +18,7 @@ namespace DodgeGame
 
         public override void Update(SizeF windowSize)
         {
-            Position.Y += 10;
+            Position.Y += Speed;
         }
 
         public bool CollidesWith(RectangleF spaceship)
