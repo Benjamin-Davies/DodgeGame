@@ -9,7 +9,10 @@ namespace DodgeGame
     /// </summary>
     class Planet : Sprite
     {
-        public float Speed = 10;
+        /// <summary>
+        /// Static so that all planets have the same speed
+        /// </summary>
+        public static float Speed = 10;
 
         public Planet(PointF position) : base(Resources.planet1)
         {

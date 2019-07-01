@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackgroundStar.cs" />
     <Compile Include="ConfigPrompt.cs" />
     <Compile Include="ConfigPrompt.Designer.cs">
       <DependentUpon>ConfigPrompt.cs</DependentUpon>

@@ -12,12 +12,14 @@ namespace DodgeGame
     public partial class MainWindow : Form
     {
         // Constant values
-        private const int planetWidth = 77;
+        private const int planetHeight = 77;
+        private const int starHeight = 10;
 
         // Member variables for storing the state of the game
         private string username;
         private int score;
         private int livesLeft;
+        private List<BackgroundStar> stars;
         private List<Planet> planets;
         private Spaceship spaceship;
         private Random random;
@@ -34,7 +36,8 @@ namespace DodgeGame
             score = 0;
             livesLeft = 0;
 
-            // Create a list of planets
+            // Create a list of stars and a list of planets
+            stars = new List<BackgroundStar>();
             planets = new List<Planet>();
 
             // Create a spaceship
@@ -72,6 +75,7 @@ namespace DodgeGame
             // Only start moving stuff once we show the window
             FrameTimer.Enabled = true;
             PlanetTimer.Enabled = true;
+            StarTimer.Enabled = true;
         }
 
         private void MainWindow_Paint(object sender, PaintEventArgs e)
@@ -102,6 +106,12 @@ namespace DodgeGame
                     format);
             }
 
+            // Loop through all of the stars and draw them
+            foreach (var star in stars)
+            {
+                star.Draw(g);
+            }
+
             // Loop through all of the planets and draw them
             foreach (var planet in planets)
             {
@@ -129,10 +139,18 @@ namespace DodgeGame
                     planets.RemoveAt(i);
             }
 
+            // Speed up the planets with the score
+            Planet.Speed = 10 + score / 500f;
+
+            // Loop through the stars and update them
+            foreach (var star in stars)
+            {
+                star.Update(ClientSize);
+            }
+
             // Loop through the planets and update them
             foreach (var planet in planets)
             {
-                planet.Speed = 10 + score / 500f;
                 planet.Update(ClientSize);
             }
 
@@ -149,6 +167,7 @@ namespace DodgeGame
                 // Disable updates while we prompt the user
                 FrameTimer.Enabled = false;
                 PlanetTimer.Enabled = false;
+                StarTimer.Enabled = false;
 
                 // Check if we are out of lives
                 if (livesLeft <= 0)
@@ -168,6 +187,7 @@ namespace DodgeGame
                 // Enable the timers again
                 FrameTimer.Enabled = true;
                 PlanetTimer.Enabled = true;
+                StarTimer.Enabled = true;
             }
 
             // Tell the window to redraw
@@ -195,11 +215,22 @@ namespace DodgeGame
         private void PlanetTimer_Tick(object sender, EventArgs e)
         {
             // Choose a random position for the new planet
-            var xPosition = random.Next(0, Width - planetWidth);
+            var xPosition = random.Next(0, Width - planetHeight);
 
             // Create a new planet and add it to the planets list
-            var planet = new Planet(new PointF(xPosition, -planetWidth));
+            var planet = new Planet(new PointF(xPosition, -planetHeight));
             planets.Add(planet);
+        }
+
+        private void StarTimer_Tick(object sender, EventArgs e)
+        {
+            // Choose a random position and speed for the new star
+            var xPosition = random.Next(0, Width - planetHeight);
+            var speed = 0.25 + 0.5 * random.NextDouble();
+
+            // Create a new star and add it to the stars list
+            var star = new BackgroundStar(new PointF(xPosition, -starHeight), (float)speed);
+            stars.Add(star);
         }
 
         private void MainWindow_MouseEnter(object sender, EventArgs e)
