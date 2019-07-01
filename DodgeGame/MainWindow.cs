@@ -84,11 +84,10 @@ namespace DodgeGame
             var g = e.Graphics;
 
             // Clear the screen
-            if (mouseOverWindow)
-            {
-                g.FillRectangle(Brushes.DarkSlateBlue, e.ClipRectangle);
-            }
-            else
+            g.FillRectangle(Brushes.Indigo, e.ClipRectangle);
+             
+            // If the mouse isn't over the window, show some text
+            if (!mouseOverWindow)
             {
                 g.FillRectangle(Brushes.DarkSlateBlue, e.ClipRectangle);
 
