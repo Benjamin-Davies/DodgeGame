@@ -89,8 +89,6 @@ namespace DodgeGame
             // If the mouse isn't over the window, show some text
             if (!mouseOverWindow)
             {
-                g.FillRectangle(Brushes.DarkSlateBlue, e.ClipRectangle);
-
                 var font = new Font(Font.FontFamily, 72);
                 var format = new StringFormat
                 {
