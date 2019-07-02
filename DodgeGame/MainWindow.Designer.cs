@@ -30,23 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.FrameTimer = new System.Windows.Forms.Timer(this.components);
-            this.PlanetTimer = new System.Windows.Forms.Timer(this.components);
-            this.StarTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // FrameTimer
             // 
             this.FrameTimer.Interval = 33;
             this.FrameTimer.Tick += new System.EventHandler(this.FrameTimer_Tick);
-            // 
-            // PlanetTimer
-            // 
-            this.PlanetTimer.Interval = 200;
-            this.PlanetTimer.Tick += new System.EventHandler(this.PlanetTimer_Tick);
-            // 
-            // StarTimer
-            // 
-            this.StarTimer.Tick += new System.EventHandler(this.StarTimer_Tick);
             // 
             // MainWindow
             // 
@@ -60,6 +49,7 @@
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodge Game";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainWindow_Paint);
             this.MouseEnter += new System.EventHandler(this.MainWindow_MouseEnter);
@@ -72,8 +62,6 @@
         #endregion
 
         private System.Windows.Forms.Timer FrameTimer;
-        private System.Windows.Forms.Timer PlanetTimer;
-        private System.Windows.Forms.Timer StarTimer;
     }
 }
 
