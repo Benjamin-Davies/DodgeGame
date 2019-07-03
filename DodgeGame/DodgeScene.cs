@@ -14,6 +14,7 @@ namespace DodgeGame
         // Member variables for storing the state of the game
         private readonly string username;
         private int score;
+        private int lifeCount;
         private int livesLeft;
         private List<BackgroundStar> stars;
         private List<Planet> planets;
@@ -26,13 +27,13 @@ namespace DodgeGame
         private Timer PlanetTimer;
         private Timer StarTimer;
 
-        public DodgeScene(Form f, string uname, int lifeCount)
+        public DodgeScene(Form _form, string _username, int _lifeCount)
         {
+
             // Init variables
-            form = f;
-            username = uname;
-            livesLeft = lifeCount;
-            score = 0;
+            form = _form;
+            username = _username;
+            lifeCount = _lifeCount;
 
             // Initialize a random number generator
             random = new Random();
@@ -42,8 +43,9 @@ namespace DodgeGame
         {
             base.Start();
 
-            // Reset the score
+            // Reset the score and life count
             score = 0;
+            livesLeft = lifeCount;
 
             // Create a list of stars and a list of planets
             stars = new List<BackgroundStar>();
