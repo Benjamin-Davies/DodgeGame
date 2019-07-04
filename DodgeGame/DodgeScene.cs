@@ -116,6 +116,11 @@ namespace DodgeGame
 
         public void UpdateScene()
         {
+            // Temporary measure to stop score from increasing when a dialog is showing
+            // TODO: remove once we switch scenes instead of dialogs
+            if (!PlanetTimer.Enabled)
+                return;
+
             // Increment the score
             score++;
 
