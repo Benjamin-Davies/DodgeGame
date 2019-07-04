@@ -15,7 +15,7 @@ namespace DodgeGame
         private bool instructionsShown = false;
 
         // Polymorphic instance of scene
-        private Scene scene;
+        private IScene scene;
 
         public MainWindow()
         {
@@ -43,42 +43,23 @@ namespace DodgeGame
 
             // Create our scene instance
             scene = new DodgeScene(this, configPrompt.Username.Text, (int)configPrompt.LifeCount.Value);
-            scene.Start();
+            scene.Resume();
+            Controls.Add((Control)scene);
 
             FrameTimer.Enabled = true;
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            scene.Stop();
-        }
-
-        private void MainWindow_Paint(object sender, PaintEventArgs e)
-        {
-            scene.Paint(e);
+            scene.Pause();
         }
 
         private void FrameTimer_Tick(object sender, EventArgs e)
         {
-            scene.Update();
+            scene.UpdateScene();
 
             // Tell the window to redraw
             Invalidate();
-        }
-
-        private void MainWindow_MouseMove(object sender, MouseEventArgs e)
-        {
-            scene.MouseMove(e);
-        }
-
-        private void MainWindow_MouseEnter(object sender, EventArgs e)
-        {
-            scene.MouseEnter();
-        }
-
-        private void MainWindow_MouseLeave(object sender, EventArgs e)
-        {
-            scene.MouseLeave();
         }
     }
 }

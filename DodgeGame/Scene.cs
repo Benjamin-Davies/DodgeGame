@@ -3,25 +3,11 @@ using System.Windows.Forms;
 
 namespace DodgeGame
 {
-    abstract class Scene
+    public interface IScene : IContainerControl
     {
-        protected IContainer components;
+        void UpdateScene();
 
-        public abstract void Update();
-        public abstract void Paint(PaintEventArgs e);
-
-        public virtual void Start()
-        {
-            components = new Container();
-        }
-        public virtual void Stop()
-        {
-            components.Dispose();
-            components = null;
-        }
-
-        public virtual void MouseMove(MouseEventArgs e) { }
-        public virtual void MouseEnter() { }
-        public virtual void MouseLeave() { }
+        void Pause();
+        void Resume();
     }
 }

@@ -50,7 +50,12 @@
     <Compile Include="ConfigPrompt.Designer.cs">
       <DependentUpon>ConfigPrompt.cs</DependentUpon>
     </Compile>
-    <Compile Include="DodgeScene.cs" />
+    <Compile Include="DodgeScene.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DodgeScene.Designer.cs">
+      <DependentUpon>DodgeScene.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +70,9 @@
     <Compile Include="Sprite.cs" />
     <EmbeddedResource Include="ConfigPrompt.resx">
       <DependentUpon>ConfigPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodgeScene.resx">
+      <DependentUpon>DodgeScene.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
