@@ -9,6 +9,7 @@ namespace DodgeGame
         private readonly Stack<IScene> Scenes;
 
         public IScene CurrentScene => Scenes.Peek();
+        public int StackDepth => Scenes.Count;
 
         public Navigator(Form form)
         {
@@ -19,9 +20,9 @@ namespace DodgeGame
         public void Push(IScene nextScene)
         {
             // Pause the last scene, if there was one
-            var lastScene = CurrentScene;
-            if (lastScene != null)
+            if (StackDepth > 0)
             {
+                var lastScene = CurrentScene;
                 lastScene.Pause();
                 Form.Controls.Remove((Control)lastScene);
             }
@@ -40,9 +41,9 @@ namespace DodgeGame
             Form.Controls.Remove((Control)lastScene);
 
             // Use the next scene
-            var nextScene = CurrentScene;
-            if (nextScene != null)
+            if (StackDepth > 0)
             {
+                var nextScene = CurrentScene;
                 Form.Controls.Add((Control)nextScene);
                 nextScene.Resume();
             }
