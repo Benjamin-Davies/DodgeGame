@@ -14,8 +14,8 @@ namespace DodgeGame
         // So that we only show the instructions once
         private bool instructionsShown = false;
 
-        // Polymorphic instance of scene
-        private IScene scene;
+        // Store the navigator instance
+        private Navigator navigator;
 
         public MainWindow()
         {
@@ -41,25 +41,24 @@ namespace DodgeGame
             // Show the config prompt
             configPrompt.ShowDialog(this);
 
+            // Create a navigator
+            navigator = new Navigator(this);
+
             // Create our scene instance
-            scene = new DodgeScene(this, configPrompt.Username.Text, (int)configPrompt.LifeCount.Value);
-            scene.Resume();
-            Controls.Add((Control)scene);
+            var scene = new DodgeScene(this, navigator, configPrompt.Username.Text, (int)configPrompt.LifeCount.Value);
+            navigator.Push(scene);
 
             FrameTimer.Enabled = true;
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            scene.Pause();
+            navigator.CurrentScene.Pause();
         }
 
         private void FrameTimer_Tick(object sender, EventArgs e)
         {
-            scene.UpdateScene();
-
-            // Tell the window to redraw
-            Invalidate();
+            navigator.CurrentScene.UpdateScene();
         }
     }
 }
