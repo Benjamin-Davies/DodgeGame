@@ -39,6 +39,7 @@ namespace DodgeGame
             lastScene.Pause();
             Form.Controls.Remove((Control)lastScene);
 
+            // Use the next scene
             var nextScene = CurrentScene;
             if (nextScene != null)
             {
