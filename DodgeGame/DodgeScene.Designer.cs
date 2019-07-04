@@ -50,8 +50,6 @@
             this.Name = "DodgeScene";
             this.Load += new System.EventHandler(this.DodgeScene_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.DodgeScene_Paint);
-            this.Enter += new System.EventHandler(this.DodgeScene_Enter);
-            this.Leave += new System.EventHandler(this.DodgeScene_Leave);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DodgeScene_MouseMove);
             this.ResumeLayout(false);
 

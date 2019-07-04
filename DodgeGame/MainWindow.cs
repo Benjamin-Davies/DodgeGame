@@ -17,6 +17,9 @@ namespace DodgeGame
         // Store the navigator instance
         private Navigator navigator;
 
+        // If the mouse is currently over the window
+        public bool MouseOverWindow = true;
+
         public MainWindow()
         {
             // Built in method to construct UI from designer
@@ -59,6 +62,16 @@ namespace DodgeGame
         private void FrameTimer_Tick(object sender, EventArgs e)
         {
             navigator.CurrentScene.UpdateScene();
+        }
+
+        public void MainWindow_MouseEnter(object sender, EventArgs e)
+        {
+            MouseOverWindow = true;
+        }
+
+        public void MainWindow_MouseLeave(object sender, EventArgs e)
+        {
+            MouseOverWindow = false;
         }
     }
 }

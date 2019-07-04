@@ -51,6 +51,8 @@
             this.Text = "Dodge Game";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.MouseEnter += new System.EventHandler(this.MainWindow_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.MainWindow_MouseLeave);
             this.ResumeLayout(false);
 
         }
