@@ -45,7 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigPrompt.cs" />
+    <Compile Include="ConfigPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ConfigPrompt.Designer.cs">
       <DependentUpon>ConfigPrompt.cs</DependentUpon>
     </Compile>
@@ -97,6 +99,15 @@
     <Compile Include="Scenes\Scene.cs" />
     <Compile Include="Sprites\Sprite.cs" />
     <Compile Include="Sprites\Spaceship.cs" />
+    <Compile Include="Scenes\WelcomeScene.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Scenes\WelcomeScene.Designer.cs">
+      <DependentUpon>WelcomeScene.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Scenes\WelcomeScene.resx">
+      <DependentUpon>WelcomeScene.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -122,9 +133,6 @@
   <ItemGroup>
     <None Include="Resources\smallstar.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scenes\" />
-    <Folder Include="Sprites\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

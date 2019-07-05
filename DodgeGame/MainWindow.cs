@@ -47,9 +47,10 @@ namespace DodgeGame
             navigator = new Navigator(this);
 
             // Create our scene instance
-            var scene = new DodgeScene(this, navigator, configPrompt.Username.Text, (int)configPrompt.LifeCount.Value);
+            var scene = new WelcomeScene(this, navigator, configPrompt.Username.Text, (int)configPrompt.LifeCount.Value);
             navigator.Push(scene);
 
+            // Start updating the game
             FrameTimer.Enabled = true;
         }
 
