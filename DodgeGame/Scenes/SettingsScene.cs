@@ -34,6 +34,12 @@ namespace DodgeGame.Scenes
 
         public void UpdateScene() { }
 
+        private void SettingsScene_Load(object sender, EventArgs e)
+        {
+            // Fill the window
+            Dock = DockStyle.Fill;
+        }
+
         private void BackButton_Click(object sender, EventArgs e)
         {
             // Validate the username
