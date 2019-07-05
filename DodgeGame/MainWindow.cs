@@ -23,6 +23,10 @@ namespace DodgeGame
         {
             // Built in method to construct UI from designer
             InitializeComponent();
+
+            // Set the colours from resources
+            BackColor = Resources.BackColor;
+            ForeColor = Resources.ForeColor;
         }
 
         private void MainWindow_Load(object sender, EventArgs e)

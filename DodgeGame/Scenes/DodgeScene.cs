@@ -67,9 +67,11 @@ namespace DodgeGame.Scenes
         public void DodgeScene_Paint(object sender, PaintEventArgs e)
         {
             var g = e.Graphics;
+            var backColor = new SolidBrush(Resources.BackColor);
+            var foreColor = new SolidBrush(Resources.ForeColor);
 
             // Clear the screen
-            g.FillRectangle(Brushes.DarkSlateBlue, e.ClipRectangle);
+            g.FillRectangle(backColor, e.ClipRectangle);
 
             if (!form.MouseOverWindow)
             {
@@ -103,8 +105,8 @@ namespace DodgeGame.Scenes
             spaceship.Draw(g);
 
             // Draw the text
-            g.DrawString($"Score: {score}", form.Font, Brushes.White, 5, 5);
-            g.DrawString($"Lives: {livesLeft}", form.Font, Brushes.White, 5, 15 + form.Font.Size);
+            g.DrawString($"Score: {score}", form.Font, foreColor, 5, 5);
+            g.DrawString($"Lives: {livesLeft}", form.Font, foreColor, 5, 15 + form.Font.Size);
         }
 
         public void UpdateScene()

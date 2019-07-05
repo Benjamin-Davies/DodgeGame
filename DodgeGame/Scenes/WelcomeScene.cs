@@ -1,7 +1,4 @@
-﻿using DodgeGame.Sprites;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System;
 using System.Windows.Forms;
 
 namespace DodgeGame.Scenes
