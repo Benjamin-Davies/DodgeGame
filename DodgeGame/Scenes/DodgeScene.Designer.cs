@@ -1,4 +1,4 @@
-﻿namespace DodgeGame
+﻿namespace DodgeGame.Scenes
 {
     partial class DodgeScene
     {

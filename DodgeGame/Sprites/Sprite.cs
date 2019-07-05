@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace DodgeGame
+namespace DodgeGame.Sprites
 {
     /// <summary>
     /// A abstract sprite class with all of the shared methods and

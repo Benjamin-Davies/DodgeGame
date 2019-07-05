@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace DodgeGame
+namespace DodgeGame.Scenes
 {
     public class Navigator
     {

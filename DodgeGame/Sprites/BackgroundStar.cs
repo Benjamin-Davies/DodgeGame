@@ -1,7 +1,7 @@
 ﻿using DodgeGame.Properties;
 using System.Drawing;
 
-namespace DodgeGame
+namespace DodgeGame.Sprites
 {
     /// <summary>
     /// One of the stars in the background

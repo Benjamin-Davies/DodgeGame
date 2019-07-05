@@ -2,7 +2,7 @@
 using System;
 using System.Drawing;
 
-namespace DodgeGame
+namespace DodgeGame.Sprites
 {
     /// <summary>
     /// A planet object
