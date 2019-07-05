@@ -37,17 +37,11 @@ namespace DodgeGame
                 instructionsShown = true;
             }
 
-            // Create a config prompt
-            var configPrompt = new ConfigPrompt();
-
-            // Show the config prompt
-            configPrompt.ShowDialog(this);
-
             // Create a navigator
             navigator = new Navigator(this);
 
             // Create our scene instance
-            var scene = new WelcomeScene(this, navigator, configPrompt.Username.Text, (int)configPrompt.LifeCount.Value);
+            var scene = new WelcomeScene(this, navigator);
             navigator.Push(scene);
 
             // Start updating the game
