@@ -43,6 +43,7 @@ namespace DodgeGame.Scenes
         private void HelpButton_Click(object sender, EventArgs e)
         {
             // Go to the help scene
+            navigator.Push(new HelpScene(form, navigator));
         }
 
         private void QuitButton_Click(object sender, EventArgs e)

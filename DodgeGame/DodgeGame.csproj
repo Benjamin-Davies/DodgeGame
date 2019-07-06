@@ -109,6 +109,15 @@
     <EmbeddedResource Include="Scenes\WelcomeScene.resx">
       <DependentUpon>WelcomeScene.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Scenes\HelpScene.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Scenes\HelpScene.Designer.cs">
+      <DependentUpon>HelpScene.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Scenes\HelpScene.resx">
+      <DependentUpon>HelpScene.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

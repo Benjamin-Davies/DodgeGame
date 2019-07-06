@@ -10,9 +10,6 @@ namespace DodgeGame
     /// </summary>
     public partial class MainWindow : Form
     {
-        // So that we only show the instructions once
-        private bool instructionsShown = false;
-
         // Store the navigator instance
         private Navigator navigator;
 
@@ -31,16 +28,6 @@ namespace DodgeGame
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            // Only show the instructions once
-            if (!instructionsShown)
-            {
-                // Show the instructions
-                MessageBox.Show(this, Resources.Instructions, "Instructions");
-
-                // Dont show them again
-                instructionsShown = true;
-            }
-
             // Create a navigator
             navigator = new Navigator(this);
 
