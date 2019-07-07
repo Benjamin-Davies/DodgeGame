@@ -49,15 +49,36 @@ namespace DodgeGame.Scenes
               RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
             // Check the input against the regex
-            bool matches = rx.IsMatch(Username.Text);
+            string username = Username.Text;
+            bool matches = rx.IsMatch(username);
 
             // Stop the form from closing if it doesn't match
             if (!matches)
             {
-                MessageBox.Show(this,
-                    "It must start with a letter, and then only consist of letters, numbers, underscores and spaces.\n" +
-                    "It must also be at least 3 letters long and not end with a space",
-                    "Invalid Username");
+                // Use more specific regexes to find out what went wrong
+                var startWithLetterRegex = new Regex(@"^[a-zA-Z]");
+                var validCharactersRegex = new Regex(@"^[\w ]*$");
+                var endWithWordCharRegex = new Regex(@"\w$");
+
+                // Display an error message
+                if (username.Length < 3)
+                {
+                    usernameErrorLabel.Text = "Must be 3+ characters long";
+                }
+                else if (!startWithLetterRegex.IsMatch(username))
+                {
+                    usernameErrorLabel.Text = "Must start with a letter";
+                }
+                else if (!validCharactersRegex.IsMatch(username))
+                {
+                    usernameErrorLabel.Text = "Invalid character/symbol";
+                }
+                else if (!endWithWordCharRegex.IsMatch(username))
+                {
+                    usernameErrorLabel.Text = "Must not end with a space";
+                }
+
+                // Stop the scene from exiting
                 return;
             }
             // Go back

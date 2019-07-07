@@ -32,6 +32,7 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.titleLable = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
+            this.usernameErrorLabel = new System.Windows.Forms.Label();
             this.lifeCountLabel = new System.Windows.Forms.Label();
             this.Username = new System.Windows.Forms.TextBox();
             this.LifeCount = new System.Windows.Forms.NumericUpDown();
@@ -50,6 +51,7 @@
             this.tableLayoutPanel.Controls.Add(this.BackButton, 1, 5);
             this.tableLayoutPanel.Controls.Add(this.titleLable, 1, 0);
             this.tableLayoutPanel.Controls.Add(this.usernameLabel, 1, 1);
+            this.tableLayoutPanel.Controls.Add(this.usernameErrorLabel, 3, 1);
             this.tableLayoutPanel.Controls.Add(this.Username, 2, 1);
             this.tableLayoutPanel.Controls.Add(this.LifeCount, 2, 2);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -104,6 +106,18 @@
             this.usernameLabel.TabIndex = 5;
             this.usernameLabel.Text = "Username";
             this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // usernameErrorLabel
+            // 
+            this.usernameErrorLabel.AutoSize = true;
+            this.usernameErrorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.usernameErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameErrorLabel.ForeColor = System.Drawing.Color.HotPink;
+            this.usernameErrorLabel.Location = new System.Drawing.Point(215, 236);
+            this.usernameErrorLabel.Name = "usernameErrorLabel";
+            this.usernameErrorLabel.Size = new System.Drawing.Size(312, 78);
+            this.usernameErrorLabel.TabIndex = 5;
+            this.usernameErrorLabel.Text = "";
             // 
             // lifeCountLabel
             // 
@@ -171,6 +185,7 @@
         private System.Windows.Forms.Label titleLable;
         private System.Windows.Forms.Label lifeCountLabel;
         private System.Windows.Forms.Label usernameLabel;
+        private System.Windows.Forms.Label usernameErrorLabel;
         private System.Windows.Forms.TextBox Username;
         private System.Windows.Forms.NumericUpDown LifeCount;
     }
