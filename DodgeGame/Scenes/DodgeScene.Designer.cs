@@ -35,11 +35,13 @@
             // 
             // PlanetTimer
             // 
+            this.PlanetTimer.Enabled = true;
             this.PlanetTimer.Interval = 200;
             this.PlanetTimer.Tick += new System.EventHandler(PlanetTimer_Tick);
             //
             // StarTimer
             //
+            this.StarTimer.Enabled = true;
             this.StarTimer.Tick += new System.EventHandler(StarTimer_Tick);
             // 
             // DodgeScene

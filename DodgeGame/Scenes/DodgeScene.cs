@@ -16,6 +16,7 @@ namespace DodgeGame.Scenes
         // Member variables for storing the state of the game
         private int score;
         private int livesLeft;
+        private bool paused;
         private List<BackgroundStar> stars;
         private List<Planet> planets;
         private Spaceship spaceship;
@@ -52,16 +53,12 @@ namespace DodgeGame.Scenes
 
         public void Pause()
         {
-            // Diable the timers
-            PlanetTimer.Enabled = false;
-            StarTimer.Enabled = false;
+            paused = true;
         }
 
         public void Resume()
         {
-            // Enable the timers
-            PlanetTimer.Enabled = true;
-            StarTimer.Enabled = true;
+            paused = false;
         }
 
         public void DodgeScene_Paint(object sender, PaintEventArgs e)
@@ -159,16 +156,13 @@ namespace DodgeGame.Scenes
                 // Check if we are out of lives
                 if (livesLeft <= 0)
                 {
-                    // Tell the user he/she is out of lives
-                    MessageBox.Show(form, $"{Settings.Default.Username} finished with {score} points.", "Game Over");
-
-                    // Reset the game
-                    Reset();
+                    // Tell the user he/she is out of lives and exit the scene
+                    navigator.Replace(new TextScene(form, navigator, $"Game Over!\n{Settings.Default.Username} finished with {score} points."));
                 }
                 else
                 {
                     // Tell the user he/she died
-                    MessageBox.Show(form, "You have been hit by a planet", "You died");
+                    navigator.Push(new TextScene(form, navigator, "You have been hit by a planet"));
                 }
 
                 // Enable the timers again
@@ -194,6 +188,9 @@ namespace DodgeGame.Scenes
 
         private void PlanetTimer_Tick(object sender, EventArgs e)
         {
+            // Don't create new planets if the game is paused
+            if (paused) return;
+
             // Choose a random position for the new planet
             var xPosition = random.Next(0, form.ClientSize.Width - planetHeight);
 
@@ -204,6 +201,9 @@ namespace DodgeGame.Scenes
 
         private void StarTimer_Tick(object sender, EventArgs e)
         {
+            // Don't create new stars if the game is paused
+            if (paused) return;
+
             // Choose a random position and speed for the new star
             var xPosition = random.Next(0, form.ClientSize.Width - starHeight);
             var speed = 0.25 + 0.5 * random.NextDouble();
