@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace DodgeGame.Scenes
@@ -20,32 +21,57 @@ namespace DodgeGame.Scenes
         public void Push(IScene nextScene)
         {
             // Pause the last scene, if there was one
-            if (StackDepth > 0)
-            {
-                var lastScene = CurrentScene;
-                lastScene.Pause();
-                Form.Controls.Remove((Control)lastScene);
-            }
+            Dettach();
 
             // Push our new scene to the stack
             Scenes.Push(nextScene);
-            Form.Controls.Add((Control)nextScene);
-            nextScene.Resume();
+
+            // Use the new scene
+            Attach();
         }
 
         public void Pop()
         {
+            // Stop using the last scene
+            Dettach();
+
             // Pop the last scene from the stack
-            var lastScene = Scenes.Pop();
-            lastScene.Pause();
-            Form.Controls.Remove((Control)lastScene);
+            Scenes.Pop();
 
             // Use the next scene
+            Attach();
+        }
+
+        public void Replace(IScene scene)
+        {
+            // Stop using the last scene
+            Dettach();
+
+            // Swap out the current scene
+            Scenes.Pop();
+            Scenes.Push(scene);
+
+            // Use the next scene
+            Attach();
+        }
+
+        protected void Attach()
+        {
             if (StackDepth > 0)
             {
                 var nextScene = CurrentScene;
                 Form.Controls.Add((Control)nextScene);
                 nextScene.Resume();
+            }
+        }
+
+        protected void Dettach()
+        {
+            if (StackDepth > 0)
+            {
+                var lastScene = CurrentScene;
+                lastScene.Pause();
+                Form.Controls.Remove((Control)lastScene);
             }
         }
     }
