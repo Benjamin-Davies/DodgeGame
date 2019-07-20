@@ -90,6 +90,7 @@
             this.HelpText.Multiline = true;
             this.HelpText.Name = "HelpText";
             this.HelpText.ReadOnly = true;
+            this.HelpText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.HelpText.Size = new System.Drawing.Size(312, 78);
             this.HelpText.TabIndex = 6;
             this.HelpText.Text = "Help Text";
