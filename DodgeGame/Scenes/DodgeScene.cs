@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace DodgeGame.Scenes
 {
+    /// <summary>
+    /// The main scene in which the player dodges planets
+    /// </summary>
     public partial class DodgeScene : UserControl, IScene
     {
         // Constant values
@@ -37,6 +40,9 @@ namespace DodgeGame.Scenes
             random = new Random();
         }
 
+        /// <summary>
+        /// Reset the game
+        /// </summary>
         public void Reset()
         {
             // Reset the score and lives
@@ -51,16 +57,25 @@ namespace DodgeGame.Scenes
             spaceship = new Spaceship();
         }
 
+        /// <summary>
+        /// Is called whenever the scene is temporarily hidden
+        /// </summary>
         public void Pause()
         {
             paused = true;
         }
 
+        /// <summary>
+        /// Is called whenever the scene is about to be shown
+        /// </summary>
         public void Resume()
         {
             paused = false;
         }
 
+        /// <summary>
+        /// Draw all of the objects
+        /// </summary>
         public void DodgeScene_Paint(object sender, PaintEventArgs e)
         {
             var g = e.Graphics;
@@ -106,6 +121,9 @@ namespace DodgeGame.Scenes
             g.DrawString($"Lives: {livesLeft}", form.Font, foreColor, 5, 15 + form.Font.Size);
         }
 
+        /// <summary>
+        /// Update the scene
+        /// </summary>
         public void UpdateScene()
         {
             // Temporary measure to stop score from increasing when a dialog is showing
@@ -170,10 +188,13 @@ namespace DodgeGame.Scenes
                 StarTimer.Enabled = true;
             }
 
-            // Redraw the scene
+            // Tell winforms to redraw the scene
             Invalidate();
         }
 
+        /// <summary>
+        /// Check if the spaceship has collided with a planet
+        /// </summary>
         private bool CheckCollisions()
         {
             // Loop through all of the planets
@@ -186,6 +207,9 @@ namespace DodgeGame.Scenes
             return false;
         }
 
+        /// <summary>
+        /// Spawn a new planet
+        /// </summary>
         private void PlanetTimer_Tick(object sender, EventArgs e)
         {
             // Don't create new planets if the game is paused
@@ -199,6 +223,9 @@ namespace DodgeGame.Scenes
             planets.Add(planet);
         }
 
+        /// <summary>
+        /// Spawn a new star
+        /// </summary>
         private void StarTimer_Tick(object sender, EventArgs e)
         {
             // Don't create new stars if the game is paused
@@ -213,12 +240,18 @@ namespace DodgeGame.Scenes
             stars.Add(star);
         }
 
+        /// <summary>
+        /// Move the spaceship so that it lines up with the mouse
+        /// </summary>
         public void DodgeScene_MouseMove(object sender, MouseEventArgs e)
         {
             // Move the spaceship to in line with the mouse
             spaceship.Position.X = e.X - spaceship.Size.Width / 2;
         }
 
+        /// <summary>
+        /// Is called when the scene is first created
+        /// </summary>
         private void DodgeScene_Load(object sender, EventArgs e)
         {
             // Fill the window

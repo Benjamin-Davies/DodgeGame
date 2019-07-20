@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 namespace DodgeGame.Scenes
 {
+    /// <summary>
+    /// Scene for inputing your name and desired life count
+    /// </summary>
     public partial class SettingsScene : UserControl, IScene
     {
         private MainWindow form;
@@ -18,6 +21,9 @@ namespace DodgeGame.Scenes
             navigator = _navigator;
         }
 
+        /// <summary>
+        /// Save the inputs
+        /// </summary>
         public void Pause()
         {
             // Save the fields
@@ -25,6 +31,9 @@ namespace DodgeGame.Scenes
             Settings.Default.LifeCount = (int)LifeCount.Value;
         }
 
+        /// <summary>
+        /// Update the inputs
+        /// </summary>
         public void Resume()
         {
             // Update the fields
@@ -32,14 +41,21 @@ namespace DodgeGame.Scenes
             LifeCount.Value = Settings.Default.LifeCount;
         }
 
+        // Unused
         public void UpdateScene() { }
 
+        /// <summary>
+        /// Is called when the scene is created
+        /// </summary>
         private void SettingsScene_Load(object sender, EventArgs e)
         {
             // Fill the window
             Dock = DockStyle.Fill;
         }
 
+        /// <summary>
+        /// Validate the user's input and exit the scene
+        /// </summary>
         private void BackButton_Click(object sender, EventArgs e)
         {
             // Validate the username
