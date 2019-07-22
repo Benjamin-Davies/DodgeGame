@@ -43,14 +43,6 @@ namespace DodgeGame
         }
 
         /// <summary>
-        /// Is called when the form closes
-        /// </summary>
-        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            navigator.CurrentScene.Pause();
-        }
-
-        /// <summary>
         /// Is called every frame
         /// </summary>
         private void FrameTimer_Tick(object sender, EventArgs e)
