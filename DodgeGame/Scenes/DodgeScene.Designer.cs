@@ -1,4 +1,6 @@
-﻿namespace DodgeGame.Scenes
+﻿using System;
+
+namespace DodgeGame.Scenes
 {
     partial class DodgeScene
     {
@@ -52,6 +54,8 @@
             this.Name = "DodgeScene";
             this.Load += new System.EventHandler(this.DodgeScene_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.DodgeScene_Paint);
+            this.MouseEnter += new System.EventHandler(this.DodgeScene_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.DodgeScene_MouseLeave);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DodgeScene_MouseMove);
             this.ResumeLayout(false);
 

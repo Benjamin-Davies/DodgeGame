@@ -50,8 +50,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodge Game";
             this.Load += new System.EventHandler(this.MainWindow_Load);
-            this.MouseEnter += new System.EventHandler(this.MainWindow_MouseEnter);
-            this.MouseLeave += new System.EventHandler(this.MainWindow_MouseLeave);
             this.ResumeLayout(false);
 
         }
