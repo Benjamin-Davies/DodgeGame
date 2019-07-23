@@ -85,6 +85,12 @@
       <DependentUpon>DodgeScene.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Scenes\Navigator.cs" />
+    <Compile Include="Scenes\PauseScene.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Scenes\PauseScene.Designer.cs">
+      <DependentUpon>PauseScene.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scenes\SettingsScene.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     <Compile Include="Scenes\WelcomeScene.Designer.cs">
       <DependentUpon>WelcomeScene.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Scenes\PauseScene.resx">
+      <DependentUpon>PauseScene.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Scenes\SettingsScene.resx">
       <DependentUpon>SettingsScene.cs</DependentUpon>
     </EmbeddedResource>
