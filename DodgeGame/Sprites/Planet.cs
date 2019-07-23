@@ -19,11 +19,17 @@ namespace DodgeGame.Sprites
             Position = position;
         }
 
+        /// <summary>
+        /// Update the planet's position
+        /// </summary>
         public override void Update(SizeF windowSize)
         {
             Position.Y += Speed;
         }
 
+        /// <summary>
+        /// Check if the planet collides with the given spaceship
+        /// </summary>
         public bool CollidesWith(RectangleF spaceship)
         {
             var circle1 = Circle.FromRect(Rectangle);
@@ -31,11 +37,17 @@ namespace DodgeGame.Sprites
             return circle1.IntersectsWith(circle2);
         }
 
+        /// <summary>
+        /// Circle class to help with collision detection
+        /// </summary>
         private class Circle
         {
             public PointF Center;
             public float Radius;
 
+            /// <summary>
+            /// Get an inscribed circle from the given rectangle
+            /// </summary>
             public static Circle FromRect(RectangleF rectangle)
             {
                 // Inscribes a circle in the smallest square that contains the
@@ -55,6 +67,9 @@ namespace DodgeGame.Sprites
                 };
             }
 
+            /// <summary>
+            /// Check if the circle intersects with another circle
+            /// </summary>
             public bool IntersectsWith(Circle other)
             {
                 // Compare the distance between centers to the sum of the radii

@@ -19,8 +19,14 @@ namespace DodgeGame.Sprites
             Position = new PointF();
         }
 
+        /// <summary>
+        /// Method to overide to update the sprite
+        /// </summary>
         public virtual void Update(SizeF windowSize) { }
 
+        /// <summary>
+        /// Draw the sprite
+        /// </summary>
         public virtual void Draw(Graphics g)
         {
             g.DrawImage(Image, Rectangle);

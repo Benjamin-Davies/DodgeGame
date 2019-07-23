@@ -16,6 +16,9 @@ namespace DodgeGame.Sprites
             Speed = speed;
         }
 
+        /// <summary>
+        /// Update the star's position
+        /// </summary>
         public override void Update(SizeF windowSize)
         {
             base.Update(windowSize);

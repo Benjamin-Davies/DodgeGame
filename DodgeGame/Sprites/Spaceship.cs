@@ -10,6 +10,9 @@ namespace DodgeGame.Sprites
     {
         public Spaceship() : base(Resources.alien1) { }
 
+        /// <summary>
+        /// Update the spaceship's position
+        /// </summary>
         public override void Update(SizeF windowSize)
         {
             base.Update(windowSize);
@@ -20,15 +23,9 @@ namespace DodgeGame.Sprites
             float maxX = windowSize.Width - Size.Width;
             if (Position.X > maxX)
                 Position.X = maxX;
-        }
 
-        public override void Draw(Graphics g)
-        {
             // Update the y coordinate so that it is at the bottom of the window
-            Position.Y = g.ClipBounds.Height - Size.Height;
-
-            // Draw normally
-            base.Draw(g);
+            Position.Y = windowSize.Height - Size.Height;
         }
     }
 }
