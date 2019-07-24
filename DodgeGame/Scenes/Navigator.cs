@@ -16,7 +16,7 @@ namespace DodgeGame.Scenes
         private readonly Form Form;
         private readonly Stack<IScene> Scenes;
 
-        public IScene CurrentScene => Scenes.Peek();
+        public IScene CurrentScene => Scenes.Count > 0 ? Scenes.Peek() : null;
         public int StackDepth => Scenes.Count;
 
         public Navigator(Form form)
