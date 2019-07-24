@@ -46,5 +46,22 @@ namespace DodgeGame
         {
             navigator.CurrentScene.UpdateScene();
         }
+
+        private void MainWindow_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyData)
+            {
+                case Keys.Escape:
+                    if (navigator.CurrentScene is DodgeScene)
+                    {
+                        navigator.Push(new PauseScene(this, navigator));
+                    }
+                    else
+                    {
+                        navigator.Pop();
+                    }
+                    break;
+            }
+        }
     }
 }
