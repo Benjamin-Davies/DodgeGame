@@ -75,6 +75,10 @@ namespace DodgeGame
                         navigator.Pop();
                     }
                     break;
+                case Keys.F1:
+                    // When F1 is pressed, show the help message
+                    navigator.Push(new HelpScene(this, navigator));
+                    break;
             }
         }
     }
