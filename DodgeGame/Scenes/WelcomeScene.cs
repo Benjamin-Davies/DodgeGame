@@ -28,7 +28,7 @@ namespace DodgeGame.Scenes
             navigator = _navigator;
         }
 
-        // Unused interface method
+        // Unused interface methods
         public void Pause() { }
         public void Resume() { }
         public void UpdateScene() { }
