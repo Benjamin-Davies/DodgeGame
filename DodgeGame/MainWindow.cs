@@ -47,17 +47,31 @@ namespace DodgeGame
             navigator.CurrentScene.UpdateScene();
         }
 
+        /// <summary>
+        /// Called when the user releases a key
+        /// </summary>
         private void MainWindow_KeyUp(object sender, KeyEventArgs e)
         {
+            // Do different things depending on what keys and modifiers were pressed
             switch (e.KeyData)
             {
                 case Keys.Escape:
-                    if (navigator.CurrentScene is DodgeScene)
+                    // When escape is pressed, check what scene we are on
+                    if (navigator.CurrentScene is WelcomeScene)
                     {
+                        // If the game is on the welcome screen, then prompt the user to close.
+                        if (MessageBox.Show(this, "Are you sure that you want to quit?", "", MessageBoxButtons.YesNo)
+                            == DialogResult.Yes)
+                            Close();
+                    }
+                    else if (navigator.CurrentScene is DodgeScene)
+                    {
+                        // If the game is running, pause the game
                         navigator.Push(new PauseScene(this, navigator));
                     }
                     else
                     {
+                        // Leave the current scene
                         navigator.Pop();
                     }
                     break;
