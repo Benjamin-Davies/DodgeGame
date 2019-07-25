@@ -17,6 +17,8 @@ namespace DodgeGame.Scenes
         {
             InitializeComponent();
 
+            BackButton.BackColor = Resources.AltBackColor;
+
             form = _form;
             navigator = _navigator;
         }

@@ -18,6 +18,8 @@ namespace DodgeGame.Scenes
 
             HelpText.Text = Resources.Instructions;
 
+            BackButton.BackColor = Resources.AltBackColor;
+
             form = _form;
             navigator = _navigator;
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DodgeGame.Properties;
 
 namespace DodgeGame.Scenes
 {
@@ -18,6 +19,10 @@ namespace DodgeGame.Scenes
         public PauseScene(MainWindow _form, Navigator _navigator)
         {
             InitializeComponent();
+
+            ResumeButton.BackColor = Resources.AltBackColor;
+            HelpButton.BackColor = Resources.AltBackColor;
+            QuitButton.BackColor = Resources.AltBackColor;
 
             form = _form;
             navigator = _navigator;
