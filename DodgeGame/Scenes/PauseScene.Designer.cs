@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.ResumeButton = new System.Windows.Forms.Button();
+            this.HelpButton = new System.Windows.Forms.Button();
             this.titleLable = new System.Windows.Forms.Label();
             this.QuitButton = new System.Windows.Forms.Button();
-            this.HelpButton = new System.Windows.Forms.Button();
-            this.ResumeButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,30 @@
             this.tableLayoutPanel.Size = new System.Drawing.Size(1124, 630);
             this.tableLayoutPanel.TabIndex = 2;
             // 
+            // ResumeButton
+            // 
+            this.ResumeButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ResumeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.ResumeButton.Location = new System.Drawing.Point(227, 192);
+            this.ResumeButton.Name = "ResumeButton";
+            this.ResumeButton.Size = new System.Drawing.Size(668, 120);
+            this.ResumeButton.TabIndex = 6;
+            this.ResumeButton.Text = "Resume";
+            this.ResumeButton.UseVisualStyleBackColor = true;
+            this.ResumeButton.Click += new System.EventHandler(this.ResumeButton_Click);
+            // 
+            // HelpButton
+            // 
+            this.HelpButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HelpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.HelpButton.Location = new System.Drawing.Point(227, 318);
+            this.HelpButton.Name = "HelpButton";
+            this.HelpButton.Size = new System.Drawing.Size(668, 88);
+            this.HelpButton.TabIndex = 5;
+            this.HelpButton.Text = "Help";
+            this.HelpButton.UseVisualStyleBackColor = true;
+            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
+            // 
             // titleLable
             // 
             this.titleLable.AutoSize = true;
@@ -76,40 +100,13 @@
             // 
             this.QuitButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.QuitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.QuitButton.Location = new System.Drawing.Point(238, 422);
-            this.QuitButton.Margin = new System.Windows.Forms.Padding(14, 13, 14, 13);
+            this.QuitButton.Location = new System.Drawing.Point(227, 412);
             this.QuitButton.Name = "QuitButton";
-            this.QuitButton.Size = new System.Drawing.Size(646, 68);
+            this.QuitButton.Size = new System.Drawing.Size(668, 88);
             this.QuitButton.TabIndex = 4;
             this.QuitButton.Text = "Quit to Title";
             this.QuitButton.UseVisualStyleBackColor = true;
             this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
-            // 
-            // HelpButton
-            // 
-            this.HelpButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HelpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.HelpButton.Location = new System.Drawing.Point(238, 328);
-            this.HelpButton.Margin = new System.Windows.Forms.Padding(14, 13, 14, 13);
-            this.HelpButton.Name = "HelpButton";
-            this.HelpButton.Size = new System.Drawing.Size(646, 68);
-            this.HelpButton.TabIndex = 5;
-            this.HelpButton.Text = "Help";
-            this.HelpButton.UseVisualStyleBackColor = true;
-            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
-            // 
-            // ResumeButton
-            // 
-            this.ResumeButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ResumeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.ResumeButton.Location = new System.Drawing.Point(238, 202);
-            this.ResumeButton.Margin = new System.Windows.Forms.Padding(14, 13, 14, 13);
-            this.ResumeButton.Name = "ResumeButton";
-            this.ResumeButton.Size = new System.Drawing.Size(646, 100);
-            this.ResumeButton.TabIndex = 6;
-            this.ResumeButton.Text = "Resume";
-            this.ResumeButton.UseVisualStyleBackColor = true;
-            this.ResumeButton.Click += new System.EventHandler(this.ResumeButton_Click);
             // 
             // PauseScene
             // 

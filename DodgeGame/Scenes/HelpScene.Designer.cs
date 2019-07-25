@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.BackButton = new System.Windows.Forms.Button();
             this.titleLable = new System.Windows.Forms.Label();
             this.HelpText = new System.Windows.Forms.TextBox();
+            this.BackButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,18 +56,6 @@
             this.tableLayoutPanel.Size = new System.Drawing.Size(1060, 710);
             this.tableLayoutPanel.TabIndex = 1;
             // 
-            // BackButton
-            // 
-            this.BackButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackButton.Location = new System.Drawing.Point(226, 483);
-            this.BackButton.Margin = new System.Windows.Forms.Padding(14, 13, 14, 13);
-            this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(608, 52);
-            this.BackButton.TabIndex = 4;
-            this.BackButton.Text = "Back";
-            this.BackButton.UseVisualStyleBackColor = true;
-            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
-            // 
             // titleLable
             // 
             this.titleLable.AutoSize = true;
@@ -76,24 +64,34 @@
             this.titleLable.Location = new System.Drawing.Point(226, 0);
             this.titleLable.Margin = new System.Windows.Forms.Padding(14, 0, 14, 0);
             this.titleLable.Name = "titleLable";
-            this.titleLable.Size = new System.Drawing.Size(608, 236);
+            this.titleLable.Size = new System.Drawing.Size(608, 213);
             this.titleLable.TabIndex = 0;
             this.titleLable.Text = "Help";
             this.titleLable.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // HelpText
             // 
-            this.HelpText.AutoSize = true;
             this.HelpText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HelpText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HelpText.Location = new System.Drawing.Point(215, 314);
+            this.HelpText.Location = new System.Drawing.Point(215, 216);
             this.HelpText.Multiline = true;
             this.HelpText.Name = "HelpText";
             this.HelpText.ReadOnly = true;
             this.HelpText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.HelpText.Size = new System.Drawing.Size(312, 78);
+            this.HelpText.Size = new System.Drawing.Size(630, 242);
             this.HelpText.TabIndex = 6;
             this.HelpText.Text = "Help Text";
+            // 
+            // BackButton
+            // 
+            this.BackButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BackButton.Location = new System.Drawing.Point(215, 464);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(630, 100);
+            this.BackButton.TabIndex = 4;
+            this.BackButton.Text = "Back";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // HelpScene
             // 

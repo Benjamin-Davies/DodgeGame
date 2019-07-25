@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.QuitButton = new System.Windows.Forms.Button();
+            this.HelpButton = new System.Windows.Forms.Button();
+            this.SettingsButton = new System.Windows.Forms.Button();
             this.titleLable = new System.Windows.Forms.Label();
             this.PlayButton = new System.Windows.Forms.Button();
-            this.SettingsButton = new System.Windows.Forms.Button();
-            this.HelpButton = new System.Windows.Forms.Button();
-            this.QuitButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,40 @@
             this.tableLayoutPanel.Size = new System.Drawing.Size(1080, 720);
             this.tableLayoutPanel.TabIndex = 0;
             // 
+            // QuitButton
+            // 
+            this.tableLayoutPanel.SetColumnSpan(this.QuitButton, 2);
+            this.QuitButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.QuitButton.Location = new System.Drawing.Point(219, 471);
+            this.QuitButton.Name = "QuitButton";
+            this.QuitButton.Size = new System.Drawing.Size(642, 102);
+            this.QuitButton.TabIndex = 4;
+            this.QuitButton.Text = "Quit Game";
+            this.QuitButton.UseVisualStyleBackColor = true;
+            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
+            // 
+            // HelpButton
+            // 
+            this.HelpButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HelpButton.Location = new System.Drawing.Point(543, 363);
+            this.HelpButton.Name = "HelpButton";
+            this.HelpButton.Size = new System.Drawing.Size(318, 102);
+            this.HelpButton.TabIndex = 3;
+            this.HelpButton.Text = "Help";
+            this.HelpButton.UseVisualStyleBackColor = true;
+            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
+            // 
+            // SettingsButton
+            // 
+            this.SettingsButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SettingsButton.Location = new System.Drawing.Point(219, 363);
+            this.SettingsButton.Name = "SettingsButton";
+            this.SettingsButton.Size = new System.Drawing.Size(318, 102);
+            this.SettingsButton.TabIndex = 2;
+            this.SettingsButton.Text = "Settings";
+            this.SettingsButton.UseVisualStyleBackColor = true;
+            this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
+            // 
             // titleLable
             // 
             this.titleLable.AutoSize = true;
@@ -80,51 +114,13 @@
             // 
             this.tableLayoutPanel.SetColumnSpan(this.PlayButton, 2);
             this.PlayButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PlayButton.Location = new System.Drawing.Point(230, 229);
-            this.PlayButton.Margin = new System.Windows.Forms.Padding(14, 13, 14, 13);
+            this.PlayButton.Location = new System.Drawing.Point(219, 219);
             this.PlayButton.Name = "PlayButton";
-            this.PlayButton.Size = new System.Drawing.Size(620, 118);
+            this.PlayButton.Size = new System.Drawing.Size(642, 138);
             this.PlayButton.TabIndex = 1;
             this.PlayButton.Text = "Play";
             this.PlayButton.UseVisualStyleBackColor = true;
             this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
-            // 
-            // SettingsButton
-            // 
-            this.SettingsButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SettingsButton.Location = new System.Drawing.Point(230, 373);
-            this.SettingsButton.Margin = new System.Windows.Forms.Padding(14, 13, 14, 13);
-            this.SettingsButton.Name = "SettingsButton";
-            this.SettingsButton.Size = new System.Drawing.Size(296, 82);
-            this.SettingsButton.TabIndex = 2;
-            this.SettingsButton.Text = "Settings";
-            this.SettingsButton.UseVisualStyleBackColor = true;
-            this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
-            // 
-            // HelpButton
-            // 
-            this.HelpButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HelpButton.Location = new System.Drawing.Point(554, 373);
-            this.HelpButton.Margin = new System.Windows.Forms.Padding(14, 13, 14, 13);
-            this.HelpButton.Name = "HelpButton";
-            this.HelpButton.Size = new System.Drawing.Size(296, 82);
-            this.HelpButton.TabIndex = 3;
-            this.HelpButton.Text = "Help";
-            this.HelpButton.UseVisualStyleBackColor = true;
-            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
-            // 
-            // QuitButton
-            // 
-            this.tableLayoutPanel.SetColumnSpan(this.QuitButton, 2);
-            this.QuitButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.QuitButton.Location = new System.Drawing.Point(230, 481);
-            this.QuitButton.Margin = new System.Windows.Forms.Padding(14, 13, 14, 13);
-            this.QuitButton.Name = "QuitButton";
-            this.QuitButton.Size = new System.Drawing.Size(620, 82);
-            this.QuitButton.TabIndex = 4;
-            this.QuitButton.Text = "Quit Game";
-            this.QuitButton.UseVisualStyleBackColor = true;
-            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
             // 
             // WelcomeScene
             // 
