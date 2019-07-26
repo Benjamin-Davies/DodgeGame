@@ -80,6 +80,7 @@ namespace DodgeGame.Scenes
             {
                 var nextScene = CurrentScene;
                 Form.Controls.Add((Control)nextScene);
+                Form.ActiveControl = (Control)nextScene;
                 nextScene.Resume();
             }
         }
