@@ -97,6 +97,7 @@
     <Compile Include="Scenes\SettingsScene.Designer.cs">
       <DependentUpon>SettingsScene.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scoreboard.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Sprites\BackgroundStar.cs" />
     <Compile Include="Sprites\Planet.cs" />
