@@ -5,6 +5,13 @@ VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DodgeGame", "DodgeGame\DodgeGame.csproj", "{F67D6AD1-83FF-44DF-B932-8AFE5C85DB5B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DodgeGameScoreboard", "DodgeGameScoreboard", "{7FB4263D-56E0-4775-A448-58B6BE145486}"
+	ProjectSection(SolutionItems) = preProject
+		DodgeGameScoreboard\.gitignore = DodgeGameScoreboard\.gitignore
+		DodgeGameScoreboard\index.html = DodgeGameScoreboard\index.html
+		DodgeGameScoreboard\scoreboard.php = DodgeGameScoreboard\scoreboard.php
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
