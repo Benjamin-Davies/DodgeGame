@@ -77,5 +77,14 @@ namespace DodgeGame.Scenes
             // Quit the game
             form.Close();
         }
+
+        /// <summary>
+        /// Called when the scoreboard button is clicked
+        /// </summary>
+        private void ScoreboardButton_Click(object sender, EventArgs e)
+        {
+            // Go the the scoreboard
+            navigator.Push(new ScoreboardScene());
+        }
     }
 }

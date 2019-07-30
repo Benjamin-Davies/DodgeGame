@@ -95,6 +95,12 @@
     <Compile Include="Scenes\PauseScene.Designer.cs">
       <DependentUpon>PauseScene.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scenes\ScoreboardScene.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Scenes\ScoreboardScene.Designer.cs">
+      <DependentUpon>ScoreboardScene.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scenes\SettingsScene.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </Compile>
     <EmbeddedResource Include="Scenes\PauseScene.resx">
       <DependentUpon>PauseScene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scenes\ScoreboardScene.resx">
+      <DependentUpon>ScoreboardScene.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Scenes\SettingsScene.resx">
       <DependentUpon>SettingsScene.cs</DependentUpon>

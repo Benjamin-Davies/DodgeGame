@@ -34,6 +34,7 @@
             this.SettingsButton = new System.Windows.Forms.Button();
             this.titleLable = new System.Windows.Forms.Label();
             this.PlayButton = new System.Windows.Forms.Button();
+            this.ScoreboardButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +45,8 @@
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel.Controls.Add(this.QuitButton, 1, 3);
+            this.tableLayoutPanel.Controls.Add(this.ScoreboardButton, 1, 3);
+            this.tableLayoutPanel.Controls.Add(this.QuitButton, 2, 3);
             this.tableLayoutPanel.Controls.Add(this.HelpButton, 2, 2);
             this.tableLayoutPanel.Controls.Add(this.SettingsButton, 1, 2);
             this.tableLayoutPanel.Controls.Add(this.titleLable, 1, 0);
@@ -64,11 +66,10 @@
             // 
             // QuitButton
             // 
-            this.tableLayoutPanel.SetColumnSpan(this.QuitButton, 2);
             this.QuitButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.QuitButton.Location = new System.Drawing.Point(219, 471);
+            this.QuitButton.Location = new System.Drawing.Point(543, 471);
             this.QuitButton.Name = "QuitButton";
-            this.QuitButton.Size = new System.Drawing.Size(642, 102);
+            this.QuitButton.Size = new System.Drawing.Size(318, 102);
             this.QuitButton.TabIndex = 4;
             this.QuitButton.Text = "Quit Game";
             this.QuitButton.UseVisualStyleBackColor = true;
@@ -122,6 +123,17 @@
             this.PlayButton.UseVisualStyleBackColor = true;
             this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
             // 
+            // ScoreboardButton
+            // 
+            this.ScoreboardButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ScoreboardButton.Location = new System.Drawing.Point(219, 471);
+            this.ScoreboardButton.Name = "ScoreboardButton";
+            this.ScoreboardButton.Size = new System.Drawing.Size(318, 102);
+            this.ScoreboardButton.TabIndex = 5;
+            this.ScoreboardButton.Text = "Scoreboard";
+            this.ScoreboardButton.UseVisualStyleBackColor = true;
+            this.ScoreboardButton.Click += new System.EventHandler(this.ScoreboardButton_Click);
+            // 
             // WelcomeScene
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(28F, 55F);
@@ -147,5 +159,6 @@
         private System.Windows.Forms.Button QuitButton;
         private System.Windows.Forms.Button HelpButton;
         private System.Windows.Forms.Button SettingsButton;
+        private System.Windows.Forms.Button ScoreboardButton;
     }
 }
