@@ -181,7 +181,11 @@ namespace DodgeGame.Scenes
                     navigator.Replace(new TextScene(form, navigator, $"Game Over!\n{Settings.Default.Username} finished with {score} points."));
 
                     // Upload the user's score
-                    Scoreboard.PostScore(Settings.Default.Username, Settings.Default.LifeCount, score);
+                    Scoreboard.PostScore(new Scoreboard.ScoreData {
+                        Username = Settings.Default.Username,
+                        LifeCount = Settings.Default.LifeCount,
+                        Score = score
+                    });
                 }
                 else
                 {
