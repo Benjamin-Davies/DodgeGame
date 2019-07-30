@@ -179,6 +179,9 @@ namespace DodgeGame.Scenes
                 {
                     // Tell the user he/she is out of lives and exit the scene
                     navigator.Replace(new TextScene(form, navigator, $"Game Over!\n{Settings.Default.Username} finished with {score} points."));
+
+                    // Upload the user's score
+                    Scoreboard.PostScore(Settings.Default.Username, Settings.Default.LifeCount, score);
                 }
                 else
                 {

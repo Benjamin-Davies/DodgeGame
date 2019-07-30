@@ -1,21 +1,25 @@
 ﻿using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace DodgeGame
 {
     static class Scoreboard
     {
-        private static HttpClient httpClient;
-        public static void PostScore(string name, int lifeCount, int score)
+        private static HttpClient httpClient = new HttpClient();
+
+        public static void PostScore(string username, int lifeCount, int score)
         {
             Task.Run(async () =>
             {
-                if (httpClient == null)
+                var content = new MultipartFormDataContent
                 {
-                    httpClient = new HttpClient();
-                }
+                    { new StringContent(username), "Username" },
+                    { new StringContent(lifeCount.ToString()), "LifeCount" },
+                    { new StringContent(score.ToString()), "Score" }
+                };
 
-                await httpClient.PostAsync("http://php.mmc.school.nz/");
+                await httpClient.PostAsync("http://php.mmc.school.nz/201BH/benjamindavies/DodgeGameScoreboard/scoreboard", content);
             });
         }
     }
