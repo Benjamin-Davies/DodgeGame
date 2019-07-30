@@ -1,5 +1,6 @@
-﻿using System.Net.Http;
-using System.Text;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace DodgeGame
@@ -19,6 +20,12 @@ namespace DodgeGame
             });
         }
 
+        public static async Task<List<ScoreData>> GetScores()
+        {
+            var response = await httpClient.GetStringAsync(ApiUrl);
+            return JsonConvert.DeserializeObject<List<ScoreData>>(response);
+        }
+
         public class ScoreData
         {
             public string Username = "";
@@ -26,9 +33,7 @@ namespace DodgeGame
             public int Score = 0;
 
             internal HttpContent CreateContent() =>
-                new MultipartFormDataContent
-                {
-                    { new StringContent(Username), "Username" },
+                new MultipartFormDataContent { { new StringContent(Username), "Username" },
                     { new StringContent(LifeCount.ToString()), "LifeCount" },
                     { new StringContent(Score.ToString()), "Score" }
                 };
