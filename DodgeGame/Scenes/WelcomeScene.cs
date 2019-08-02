@@ -21,6 +21,7 @@ namespace DodgeGame.Scenes
             PlayButton.BackColor = Resources.AltBackColor;
             HelpButton.BackColor = Resources.AltBackColor;
             SettingsButton.BackColor = Resources.AltBackColor;
+            ScoreboardButton.BackColor = Resources.AltBackColor;
             QuitButton.BackColor = Resources.AltBackColor;
 
             // Init variables
@@ -84,7 +85,7 @@ namespace DodgeGame.Scenes
         private void ScoreboardButton_Click(object sender, EventArgs e)
         {
             // Go the the scoreboard
-            navigator.Push(new ScoreboardScene());
+            navigator.Push(new ScoreboardScene(form, navigator));
         }
     }
 }

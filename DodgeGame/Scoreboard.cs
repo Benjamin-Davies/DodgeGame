@@ -20,10 +20,10 @@ namespace DodgeGame
             });
         }
 
-        public static async Task<List<ScoreData>> GetScores()
+        public static async Task<ScoreData[]> GetScores()
         {
             var response = await httpClient.GetStringAsync(ApiUrl);
-            return JsonConvert.DeserializeObject<List<ScoreData>>(response);
+            return JsonConvert.DeserializeObject<ScoreData[]>(response);
         }
 
         public class ScoreData

@@ -49,7 +49,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dodge Game";
+            this.Text = "Stellar Journey";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyUp);
             this.ResumeLayout(false);
