@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.ScoreboardButton = new System.Windows.Forms.Button();
             this.QuitButton = new System.Windows.Forms.Button();
             this.HelpButton = new System.Windows.Forms.Button();
             this.SettingsButton = new System.Windows.Forms.Button();
             this.titleLable = new System.Windows.Forms.Label();
             this.PlayButton = new System.Windows.Forms.Button();
-            this.ScoreboardButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,17 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(1080, 720);
             this.tableLayoutPanel.TabIndex = 0;
+            // 
+            // ScoreboardButton
+            // 
+            this.ScoreboardButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ScoreboardButton.Location = new System.Drawing.Point(219, 471);
+            this.ScoreboardButton.Name = "ScoreboardButton";
+            this.ScoreboardButton.Size = new System.Drawing.Size(318, 102);
+            this.ScoreboardButton.TabIndex = 5;
+            this.ScoreboardButton.Text = "Scoreboard";
+            this.ScoreboardButton.UseVisualStyleBackColor = true;
+            this.ScoreboardButton.Click += new System.EventHandler(this.ScoreboardButton_Click);
             // 
             // QuitButton
             // 
@@ -102,13 +113,13 @@
             this.titleLable.AutoSize = true;
             this.tableLayoutPanel.SetColumnSpan(this.titleLable, 2);
             this.titleLable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titleLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLable.Location = new System.Drawing.Point(230, 0);
             this.titleLable.Margin = new System.Windows.Forms.Padding(14, 0, 14, 0);
             this.titleLable.Name = "titleLable";
             this.titleLable.Size = new System.Drawing.Size(620, 216);
             this.titleLable.TabIndex = 0;
-            this.titleLable.Text = "DodgeGame";
+            this.titleLable.Text = "Stellar Journey";
             this.titleLable.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // PlayButton
@@ -122,17 +133,6 @@
             this.PlayButton.Text = "Play";
             this.PlayButton.UseVisualStyleBackColor = true;
             this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
-            // 
-            // ScoreboardButton
-            // 
-            this.ScoreboardButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ScoreboardButton.Location = new System.Drawing.Point(219, 471);
-            this.ScoreboardButton.Name = "ScoreboardButton";
-            this.ScoreboardButton.Size = new System.Drawing.Size(318, 102);
-            this.ScoreboardButton.TabIndex = 5;
-            this.ScoreboardButton.Text = "Scoreboard";
-            this.ScoreboardButton.UseVisualStyleBackColor = true;
-            this.ScoreboardButton.Click += new System.EventHandler(this.ScoreboardButton_Click);
             // 
             // WelcomeScene
             // 
