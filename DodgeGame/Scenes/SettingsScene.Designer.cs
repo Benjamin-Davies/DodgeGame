@@ -36,6 +36,7 @@
             this.usernameErrorLabel = new System.Windows.Forms.Label();
             this.Username = new System.Windows.Forms.TextBox();
             this.LifeCount = new System.Windows.Forms.NumericUpDown();
+            this.OptOutCheckBox = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LifeCount)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             this.tableLayoutPanel.Controls.Add(this.usernameErrorLabel, 3, 1);
             this.tableLayoutPanel.Controls.Add(this.Username, 2, 1);
             this.tableLayoutPanel.Controls.Add(this.LifeCount, 2, 2);
+            this.tableLayoutPanel.Controls.Add(this.OptOutCheckBox, 1, 3);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(14, 13, 14, 13);
@@ -159,6 +161,17 @@
             0,
             0});
             // 
+            // OptOutCheckBox
+            // 
+            this.OptOutCheckBox.AutoSize = true;
+            this.tableLayoutPanel.SetColumnSpan(this.OptOutCheckBox, 2);
+            this.OptOutCheckBox.Location = new System.Drawing.Point(215, 358);
+            this.OptOutCheckBox.Name = "OptOutCheckBox";
+            this.OptOutCheckBox.Size = new System.Drawing.Size(412, 46);
+            this.OptOutCheckBox.TabIndex = 10;
+            this.OptOutCheckBox.Text = "Opt Out of Scoreboard";
+            this.OptOutCheckBox.UseVisualStyleBackColor = true;
+            // 
             // SettingsScene
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(22F, 42F);
@@ -186,5 +199,6 @@
         private System.Windows.Forms.Label usernameErrorLabel;
         private System.Windows.Forms.TextBox Username;
         private System.Windows.Forms.NumericUpDown LifeCount;
+        private System.Windows.Forms.CheckBox OptOutCheckBox;
     }
 }

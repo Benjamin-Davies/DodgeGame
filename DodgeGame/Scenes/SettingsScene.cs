@@ -31,6 +31,7 @@ namespace DodgeGame.Scenes
             // Save the fields
             Settings.Default.Username = Username.Text;
             Settings.Default.LifeCount = (int)LifeCount.Value;
+            Settings.Default.ScoreboardOptOut = OptOutCheckBox.Checked;
         }
 
         /// <summary>
@@ -41,6 +42,7 @@ namespace DodgeGame.Scenes
             // Update the fields
             Username.Text = Settings.Default.Username;
             LifeCount.Value = Settings.Default.LifeCount;
+            OptOutCheckBox.Checked = Settings.Default.ScoreboardOptOut;
         }
 
         // Unused
