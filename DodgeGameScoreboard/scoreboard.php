@@ -3,7 +3,7 @@ require_once('./includes/connect.php');
 
 switch ($_SERVER['REQUEST_METHOD']) {
 case 'GET':
-  $query = $pdo->prepare('SELECT Username, LifeCount, Score FROM scoreboard ORDER BY Score ASC LIMIT 100');
+  $query = $pdo->prepare('SELECT Username, LifeCount, Score FROM scoreboard ORDER BY Score DESC LIMIT 100');
   $query->execute();
   $scores = $query->fetchAll(PDO::FETCH_ASSOC);
 
