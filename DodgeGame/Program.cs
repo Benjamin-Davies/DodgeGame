@@ -16,6 +16,10 @@ namespace DodgeGame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Show privacy notice
+            MessageBox.Show(Properties.Resources.Privacy);
+
             Application.Run(new MainWindow());
         }
     }

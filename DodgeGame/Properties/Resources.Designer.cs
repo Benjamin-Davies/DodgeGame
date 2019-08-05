@@ -111,9 +111,9 @@ namespace DodgeGame.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can view this message at any time by clicking help in the main menu, or by pressing F1.
+        ///   Looks up a localized string similar to You can view this message at any time by clicking help in the main menu, or by pressing F1. You can also press Escape to pause.
         ///The objective is to survive as long as you can without hitting a planet. You can move using the mouse. Every time you get hit you lose a life.
-        ///You can change your username at any time by clicking setting in the main menu. You can also change how many lives you get..
+        ///You can change your username at any time by clicking settings in the main menu. You can also change how many lives you get..
         /// </summary>
         internal static string Instructions {
             get {
@@ -148,6 +148,18 @@ namespace DodgeGame.Properties {
             get {
                 object obj = ResourceManager.GetObject("planet1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DodgeGame uses an online service, hosted by Mount Maunganui College, to collect your username, score, and the number of lives you chose.
+        ///No personal or identifying information is collected, except for your username if you chose to use one.
+        ///This information is public, so you should choose a username that you are comfortable with sharing.
+        ///You can opt-out of the online scoreboard in Settings..
+        /// </summary>
+        internal static string Privacy {
+            get {
+                return ResourceManager.GetString("Privacy", resourceCulture);
             }
         }
         
