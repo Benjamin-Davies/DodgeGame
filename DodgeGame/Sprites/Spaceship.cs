@@ -8,6 +8,9 @@ namespace DodgeGame.Sprites
     /// </summary>
     class Spaceship : Sprite
     {
+        public float ToMouse;
+        public float VelocityX;
+
         public Spaceship() : base(Resources.alien1) { }
 
         /// <summary>
@@ -16,6 +19,11 @@ namespace DodgeGame.Sprites
         public override void Update(SizeF windowSize)
         {
             base.Update(windowSize);
+
+            VelocityX += ToMouse / 5;
+            VelocityX *= 0.6f;
+            Position.X += VelocityX;
+            ToMouse -= VelocityX;
 
             if (Position.X < 0)
                 Position.X = 0;

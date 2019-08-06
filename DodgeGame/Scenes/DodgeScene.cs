@@ -266,7 +266,7 @@ namespace DodgeGame.Scenes
         public void DodgeScene_MouseMove(object sender, MouseEventArgs e)
         {
             // Move the spaceship to in line with the mouse
-            spaceship.Position.X = e.X - spaceship.Size.Width / 2;
+            spaceship.ToMouse = e.X - (spaceship.Position.X + spaceship.Size.Width / 2f);
         }
 
         /// <summary>
