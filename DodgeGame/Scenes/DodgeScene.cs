@@ -2,6 +2,7 @@
 using DodgeGame.Sprites;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -24,6 +25,7 @@ namespace DodgeGame.Scenes
         private List<Planet> planets;
         private Spaceship spaceship;
         private Random random;
+        private Stopwatch timeSinceResume;
         private MainWindow form;
         private Navigator navigator;
 
@@ -41,6 +43,9 @@ namespace DodgeGame.Scenes
 
             // Initialize a random number generator
             random = new Random();
+
+            // Initialize the time since resume stopwatch
+            timeSinceResume = new Stopwatch();
         }
 
         /// <summary>
@@ -74,6 +79,7 @@ namespace DodgeGame.Scenes
         public void Resume()
         {
             paused = false;
+            timeSinceResume.Restart();
         }
 
         /// <summary>
@@ -88,7 +94,7 @@ namespace DodgeGame.Scenes
             // Clear the screen
             g.DrawImage(Resources.background, e.ClipRectangle);
 
-            if (!MouseOverWindow)
+            if (!MouseOverWindow && timeSinceResume.ElapsedMilliseconds > 500)
             {
                 var font = new Font(form.Font.FontFamily, 72);
                 var format = new StringFormat
