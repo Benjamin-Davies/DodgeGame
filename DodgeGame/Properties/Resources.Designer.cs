@@ -81,7 +81,7 @@ namespace DodgeGame.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Color similar to Color [DarkSlateBlue].
+        ///   Looks up a localized resource of type System.Drawing.Color similar to Color [DarkBlue].
         /// </summary>
         internal static System.Drawing.Color AltBackColor {
             get {
@@ -91,12 +91,22 @@ namespace DodgeGame.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Color similar to Color [DarkBlue].
+        ///   Looks up a localized resource of type System.Drawing.Color similar to Color [Black].
         /// </summary>
         internal static System.Drawing.Color BackColor {
             get {
                 object obj = ResourceManager.GetObject("BackColor", resourceCulture);
                 return ((System.Drawing.Color)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap background {
+            get {
+                object obj = ResourceManager.GetObject("background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -152,7 +162,7 @@ namespace DodgeGame.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DodgeGame uses an online service, hosted by Mount Maunganui College, to collect your username, score, and the number of lives you chose.
+        ///   Looks up a localized string similar to Stellar Journey (also known as DodgeGame) uses an online service, hosted by Mount Maunganui College, to collect your username, score, and the number of lives you chose, when you finish the game.
         ///No personal or identifying information is collected, except for your username if you chose to use one.
         ///This information is public, so you should choose a username that you are comfortable with sharing.
         ///You can opt-out of the online scoreboard in Settings..

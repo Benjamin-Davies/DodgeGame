@@ -86,7 +86,7 @@ namespace DodgeGame.Scenes
             var foreColor = new SolidBrush(Resources.ForeColor);
 
             // Clear the screen
-            g.FillRectangle(backColor, e.ClipRectangle);
+            g.DrawImage(Resources.background, e.ClipRectangle);
 
             if (!MouseOverWindow)
             {

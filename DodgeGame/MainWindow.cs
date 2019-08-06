@@ -20,6 +20,7 @@ namespace DodgeGame
 
             // Set the colours from resources
             BackColor = Resources.BackColor;
+            BackgroundImage = Resources.background;
             ForeColor = Resources.ForeColor;
         }
 
