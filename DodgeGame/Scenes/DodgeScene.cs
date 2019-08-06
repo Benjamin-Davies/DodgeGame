@@ -152,7 +152,7 @@ namespace DodgeGame.Scenes
             }
 
             // Speed up the planets with the score
-            Planet.Speed = 10 + score / 500f;
+            Planet.Speed = 10 + score / 200f;
 
             // Loop through the stars and update them
             foreach (var star in stars)
