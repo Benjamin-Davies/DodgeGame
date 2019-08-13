@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DodgeGame.Scenes
@@ -14,7 +15,9 @@ namespace DodgeGame.Scenes
     public class Navigator
     {
         private readonly Form Form;
-        private readonly Stack<IScene> Scenes;
+        private Stack<IScene> Scenes;
+        private Stack<IScene> ChangedScenes;
+        private bool Delayed;
 
         public IScene CurrentScene => Scenes.Count > 0 ? Scenes.Peek() : null;
         public int StackDepth => Scenes.Count;
@@ -48,6 +51,18 @@ namespace DodgeGame.Scenes
             // Stop using the last scene
             Dettach();
 
+            if (Delayed)
+            {
+                // Set up the next state, but don't execute it yet
+                ChangedScenes = new Stack<IScene>(Scenes);
+
+                // Pop the last scene from the stack
+                ChangedScenes.Pop();
+
+                // Don't do anything else
+                return;
+            }
+
             // Pop the last scene from the stack
             Scenes.Pop();
 
@@ -69,6 +84,32 @@ namespace DodgeGame.Scenes
 
             // Use the next scene
             Attach();
+        }
+
+        /// <summary>
+        /// Delay the current navigation until the callback has finished
+        /// Cancels the operation if the callback returns false
+        /// Currently only works to stop "Pops"
+        /// </summary>
+        public void DelayNavigation(Func<Task<bool>> func)
+        {
+            // Set the flag to tell Pop to pause
+            Delayed = true;
+
+            // Run the method asynchonously
+            Task.Run(async () => {
+                // Run the callback
+                bool continiue = await func();
+
+                // Only use the new state if we are told to continiue
+                if (continiue)
+                {
+                    Scenes = ChangedScenes;
+                }
+
+                // Re-attach the scene
+                Attach();
+            });
         }
 
         /// <summary>
