@@ -174,6 +174,15 @@ namespace DodgeGame.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ce8b241032mshe054816e1ea33d7p1a591ejsn137137019248.
+        /// </summary>
+        internal static string RapidApiKey {
+            get {
+                return ResourceManager.GetString("RapidApiKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap smallstar {

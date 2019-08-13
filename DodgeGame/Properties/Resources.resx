@@ -155,4 +155,7 @@
   <data name="Privacy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Privacy.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="RapidApiKey" xml:space="preserve">
+    <value>ce8b241032mshe054816e1ea33d7p1a591ejsn137137019248</value>
+  </data>
 </root>
