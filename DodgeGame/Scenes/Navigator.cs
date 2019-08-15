@@ -54,7 +54,9 @@ namespace DodgeGame.Scenes
             if (Delayed)
             {
                 // Set up the next state, but don't execute it yet
-                ChangedScenes = new Stack<IScene>(Scenes);
+                // Passing a stack to the constructor flips the order, so we need to reverse it
+                var reversed = new Stack<IScene>(Scenes);
+                ChangedScenes = new Stack<IScene>(reversed);
 
                 // Pop the last scene from the stack
                 ChangedScenes.Pop();
@@ -108,7 +110,10 @@ namespace DodgeGame.Scenes
                 }
 
                 // Re-attach the scene
-                Attach();
+                // Must run on the UI thread
+                Form.Invoke((MethodInvoker)delegate {
+                    Attach();
+                });
             });
         }
 
