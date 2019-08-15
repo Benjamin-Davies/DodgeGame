@@ -79,6 +79,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RapidApi.cs" />
     <Compile Include="Scenes\DodgeScene.cs">
       <SubType>UserControl</SubType>
     </Compile>
