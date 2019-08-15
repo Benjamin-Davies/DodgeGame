@@ -1,6 +1,7 @@
 ﻿using DodgeGame.Properties;
 using System;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DodgeGame.Scenes
@@ -28,10 +29,18 @@ namespace DodgeGame.Scenes
         /// </summary>
         public void Pause()
         {
-            // Save the fields
-            Settings.Default.Username = Username.Text;
-            Settings.Default.LifeCount = (int)LifeCount.Value;
-            Settings.Default.ScoreboardOptOut = OptOutCheckBox.Checked;
+            // Delay the navigation until we have validated
+            navigator.DelayNavigation(async () =>
+            {
+                // Validate the input, and exit if it's invalid
+                if (!await ValidateInput()) return false;
+
+                // Save the fields
+                Settings.Default.Username = Username.Text;
+                Settings.Default.LifeCount = (int)LifeCount.Value;
+                Settings.Default.ScoreboardOptOut = OptOutCheckBox.Checked;
+                return true;
+            });
         }
 
         /// <summary>
@@ -60,7 +69,7 @@ namespace DodgeGame.Scenes
         /// <summary>
         /// Validate the user's input and exit the scene
         /// </summary>
-        private void BackButton_Click(object sender, EventArgs e)
+        private async Task<bool> ValidateInput()
         {
             // Validate the username
             // It must start with a letter, and then only consist of letters, numbers, underscores and spaces.
@@ -99,8 +108,18 @@ namespace DodgeGame.Scenes
                 }
 
                 // Stop the scene from exiting
-                return;
+                return false;
             }
+
+            // The scene can exit
+            return true;
+        }
+        
+        /// <summary>
+        /// Called when the back button is pressed
+        /// </summary>
+        private void BackButton_Click(object sender, EventArgs e)
+        {
             // Go back
             navigator.Pop();
         }
