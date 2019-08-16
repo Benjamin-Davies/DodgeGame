@@ -9,7 +9,7 @@ namespace DodgeGame
     {
         private const string ApiUrl = "http://php.mmc.school.nz/201BH/benjamindavies/DodgeGameScoreboard/scoreboard";
 
-        private static HttpClient httpClient = new HttpClient();
+        internal static HttpClient httpClient = new HttpClient();
 
         public static void PostScore(ScoreData score)
         {
