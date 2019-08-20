@@ -14,9 +14,17 @@ namespace DodgeGame.Sprites
         /// </summary>
         public static float Speed = 10;
 
-        public Planet(PointF position) : base(Resources.planet1)
+        /// <summary>
+        /// For rotating the planets
+        /// </summary>
+        public float RotationSpeed;
+        private float Rotation;
+
+        public Planet(PointF position, float initialRotation, float rotationSpeed) : base(Resources.planet1)
         {
             Position = position;
+            Rotation = initialRotation;
+            RotationSpeed = rotationSpeed;
         }
 
         /// <summary>
@@ -25,6 +33,23 @@ namespace DodgeGame.Sprites
         public override void Update(SizeF windowSize)
         {
             Position.Y += Speed;
+            Rotation += RotationSpeed;
+        }
+
+        /// <summary>
+        /// Draw the planet
+        /// </summary>
+        public override void Draw(Graphics g)
+        {
+            var originalTransform = g.Transform.Clone();
+
+            g.TranslateTransform(Position.X + Image.Width / 2f, Position.Y + Image.Height / 2f);
+
+            g.RotateTransform(Rotation);
+
+            g.DrawImage(Image, Image.Width / -2f, Image.Height / -2f);
+
+            g.Transform = originalTransform;
         }
 
         /// <summary>

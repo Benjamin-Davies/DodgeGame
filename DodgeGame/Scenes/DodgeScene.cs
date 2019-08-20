@@ -238,8 +238,12 @@ namespace DodgeGame.Scenes
             // Choose a random position for the new planet
             var xPosition = random.Next(0, form.ClientSize.Width - planetHeight);
 
+            // Choose a random rotation and rotation speed
+            var rotation = 360 * (float)random.NextDouble();
+            var rotationSpeed = -5 + 10 * (float)random.NextDouble();
+
             // Create a new planet and add it to the planets list
-            var planet = new Planet(new PointF(xPosition, -planetHeight));
+            var planet = new Planet(new PointF(xPosition, -planetHeight), rotation, rotationSpeed);
             planets.Add(planet);
         }
 
