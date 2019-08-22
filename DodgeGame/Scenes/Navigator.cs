@@ -113,6 +113,9 @@ namespace DodgeGame.Scenes
                 // Must run on the UI thread
                 Form.Invoke((MethodInvoker)delegate {
                     Attach();
+
+                    // Reset the delayed variable
+                    Delayed = false;
                 });
             });
         }
