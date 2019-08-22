@@ -112,11 +112,11 @@ namespace DodgeGame.Scenes
             }
 
             // Check if it is offensive
-            if (await RapidApi.BadWordFilter(username))
-            {
-                usernameErrorLabel.Text = "May be offensive";
-                return false;
-            }
+            //if (await RapidApi.BadWordFilter(username))
+            //{
+            //    usernameErrorLabel.Text = "May be offensive";
+            //    return false;
+            //}
 
             // The scene can exit
             return true;
