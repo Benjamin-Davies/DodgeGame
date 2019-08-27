@@ -72,9 +72,9 @@ namespace DodgeGame.Scenes
         private async Task<bool> ValidateInput()
         {
             // Validate the username
-            // It must start with a letter, and then only consist of letters, numbers, underscores and spaces.
+            // It must only contain letters
             // It must also be at least 3 letters long and not end with a space
-            var rx = new Regex(@"^[a-zA-Z][\w ]+\w$",
+            var rx = new Regex(@"^[a-zA-Z]{3,}$",
               RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
             // Check the input against the regex
@@ -85,27 +85,25 @@ namespace DodgeGame.Scenes
             if (!matches)
             {
                 // Use more specific regexes to find out what went wrong
-                var startWithLetterRegex = new Regex(@"^[a-zA-Z]");
-                var validCharactersRegex = new Regex(@"^[\w ]*$");
-                var endWithWordCharRegex = new Regex(@"\w$");
+                var onlyLetters = new Regex(@"^[a-zA-Z]+$");
+
+                string error = "Unknown error";
 
                 // Display an error message
                 if (username.Length < 3)
                 {
-                    usernameErrorLabel.Text = "Must be 3+ characters long";
+                    error = "Must be 3+ characters long";
                 }
-                else if (!startWithLetterRegex.IsMatch(username))
+                else if (!onlyLetters.IsMatch(username))
                 {
-                    usernameErrorLabel.Text = "Must start with a letter";
+                    error = "Must only contain letters";
                 }
-                else if (!validCharactersRegex.IsMatch(username))
+
+                // Set the error on the main thread
+                form.Invoke((MethodInvoker)delegate
                 {
-                    usernameErrorLabel.Text = "Invalid character/symbol";
-                }
-                else if (!endWithWordCharRegex.IsMatch(username))
-                {
-                    usernameErrorLabel.Text = "Must not end with a space";
-                }
+                    usernameErrorLabel.Text = error;
+                });
 
                 // Stop the scene from exiting
                 return false;
